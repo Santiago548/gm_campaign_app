@@ -1,1 +1,16 @@
-<h1>proficency list</h1>
+<h1>PROFICIENCY LIST</h1>
+<h2>Weapon proficiency:</h2>
+<%= character_weapons.each do |t|%>
+- <%= t %><br />
+<% end %>
+<br />
+<h2>Armor proficiency:</h2>
+<%= character_armor.each do |t|%>
+- <%= t %><br />
+<% end %>
+<br />
+<h1>SKILLS LIST</h1>
+<h2>Skills:</h2>
+<%= character_skills.each do |t|%>
+- <%= t %><br />
+<% end %>
