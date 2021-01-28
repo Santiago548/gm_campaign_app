@@ -15,8 +15,7 @@ class CreateCharacters < ActiveRecord::Migration[6.1]
       t.integer :charisma
       t.integer :proficiency_id
       T.integer :language_id
-      t.integer :player_id
-
+      t.integer :user_id
 
       t.timestamps
     end

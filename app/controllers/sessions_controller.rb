@@ -1,21 +1,21 @@
 class SessionsController < ApplicationController
-    skip_before_action :verified_player, only: [:new, :create]
+    skip_before_action :verified_user, only: [:new, :create]
 
   def new
-    @player = Player.new
+    @user = User.new
   end
 
   def create
-    if @player = Player.find_by(name: params[:player][:name])
-      session[:user_id] = @player.id
-      redirect_to player_path(@player)
+    if @user = User.find_by(name: params[:user][:name])
+      session[:user_id] = @user.id
+      redirect_to player_path(@user)
     else
       render 'new'
     end
   end
 
   def destroy
-    session.delete("player_id")
+    session.delete("user_id")
     redirect_to root_path
   end
 end
