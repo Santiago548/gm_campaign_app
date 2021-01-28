@@ -10,6 +10,71 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_01_27_234014) do
+
+  create_table "campaigns", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "next_session"
+    t.boolean "session_active"
+    t.text "quest"
+    t.integer "character_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.integer "level"
+    t.string "race"
+    t.string "class"
+    t.integer "armor_class"
+    t.integer "speed"
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.integer "proficiency_id"
+    t.integer "language_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "language_1"
+    t.string "language_2"
+    t.string "language_3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "proficiencies", force: :cascade do |t|
+    t.string "weapon_1"
+    t.string "weapon_2"
+    t.string "armor_1"
+    t.string "armor_2"
+    t.string "skill_1"
+    t.string "skill_2"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
+    t.string "name"
+    t.integer "age"
+    t.string "phone_number"
+    t.string "uid"
+    t.string "provider"
+    t.boolean "game_master"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

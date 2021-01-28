@@ -1,0 +1,29 @@
+<h1>hi</h1>
+
+<%= form_for :character do |f| %>
+  NAME: <%= f.text_field :name %><br />
+  LEVEL: <%= f.number_field :level %><br />
+  RACE: <%= f.password_field :biography %><br />
+  CLASS: <%= f.text_field :name %><br />
+  ARMOR CLASS: <%= f.number_field :age %><br />
+  SPEED: <%= f.select :phone_number, ([5,10,15,20,25,30,35,40,45,50]) %> ft<br />
+  STRENGTH: +<%= f.select :strength, (1..6) %><br />
+  DEXTERITY: +<%= f.select :dexterity, (1..6) %><br />
+  CONSTITUTION: +<%= f.select :constitution, (1..6) %><br />
+  INTELLIGENCE: +<%= f.select :intelligence, (1..6) %><br />
+  WISDOM: +<%= f.select :wisdom, (1..6) %><br />
+  CHARISMA: +<%= f.select :charisma, (1..6) %><br />
+  language one: +<%= f.select :language_1, (1..6) %><br />
+  language two: +<%= f.select :language_2, (1..6) %><br />
+  language three: +<%= f.select :language_3, (1..6) %><br />
+  WEAPON PROFICENCY:<br />
+  Weapon: +<%= f.select :weapon_1, (1..6) %><br />
+  Weapon: +<%= f.select :weapon_2, (1..6) %><br />
+  ARMOR PROFICENCEY:<br />
+  armor: <%= f.select :armor_1, (1..6) %><br />
+  armor: <%= f.select :armor_2, (1..6) %><br />
+  SKILLS:<br />
+  SKILL PROF: <%= f.select :skill_1, (1..6) %><br />
+  SKILL PROF: <%= f.select :skill_2, (1..6) %><br />
+  <%= f.submit %>
+<% end %>
