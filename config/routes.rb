@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :proficiencies
+  resources :languages
   resources :characters
   resources :game_masters
   resources :campaigns
