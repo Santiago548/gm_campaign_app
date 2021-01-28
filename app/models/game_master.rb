@@ -1,2 +1,0 @@
-class GameMaster < ApplicationRecord
-end

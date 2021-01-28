@@ -40,9 +40,10 @@ class UsersController < ApplicationController
           :password,
           :name,
           :age,
+          :phone_number,
           :uid,
           :provider,
-          :game_master_id
+          :game_master
         )
     end
 end
