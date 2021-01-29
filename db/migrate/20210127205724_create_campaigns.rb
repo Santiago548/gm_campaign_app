@@ -6,11 +6,8 @@ class CreateCampaigns < ActiveRecord::Migration[6.1]
       t.datetime :end_date
       t.datetime :next_session
       t.boolean :session_active
-      t.text :quest
-      t.integer :character_id
-      t.integer :user_id
-      t.integer :player_id
-
+      t.text :quest_log
+      
       t.timestamps
     end
   end

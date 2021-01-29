@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :players
   resources :proficiencies
   resources :languages
   resources :characters
