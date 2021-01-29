@@ -8,7 +8,7 @@ class CharactersController < ApplicationController
     end 
     
     def index
-        @brands = Character.all 
+        @characters = Character.all 
     end 
 
     def create
@@ -40,6 +40,6 @@ class CharactersController < ApplicationController
     private
 
     def character_params
-        params.require(:character).permit(:name, :level, :race, :class, :armor_class, :speed, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :proficiency_id, :language_id, :player_id, :campaign_id)
+        params.require(:character).permit(:name, :level,:race, :class, :armor_class, :speed, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :proficiency_id, :language_id, :player_id, :campaign_id)
     end 
 end
