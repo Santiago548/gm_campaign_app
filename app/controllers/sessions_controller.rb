@@ -1,21 +1,26 @@
 class SessionsController < ApplicationController
-    skip_before_action :verified_user, only: [:new, :create]
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    if @user = User.find_by(name: params[:user][:name])
-      session[:user_id] = @user.id
-      redirect_to player_path(@user)
+ 
+  def omniauth
+    user = User.find_or_create_by(uid: auth['uid'], provider: auth['provider']) do |u|
+      u.username = auth['info']['first_name']
+      u.email = auth['info']['email']
+      u.first_name = auth['info']['first_name']
+      u.last_name = auth['info']['last_name']
+      u.password = SecureRandom.hex(12)
+    end
+    if user.save
+      session[:user_id] = user.id
+      redirect_to new_character_path
     else
-      render 'new'
+      flash[:message] = user.errors.full_messages.join(', ')
+       redirect_to characters_path
     end
   end
 
-  def destroy
-    session.delete("user_id")
-    redirect_to root_path
+  private
+
+  def auth
+    request.env['omniauth.auth']
   end
+
 end
