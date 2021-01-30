@@ -1,6 +1,11 @@
 class CharactersController < ApplicationController
+    #layout 'character'
     def new
+        if !!nil
         @character = Character.new
+        else
+            render :new
+        end
     end 
 
     def show
