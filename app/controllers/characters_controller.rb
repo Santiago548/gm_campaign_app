@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
     #layout 'character'
     def new
+        # possible working method, may need to refactor.
         if !!nil
         @character = Character.new
         else
