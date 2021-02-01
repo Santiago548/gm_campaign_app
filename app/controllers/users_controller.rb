@@ -37,9 +37,10 @@ class UsersController < ApplicationController
           :username,
           :email,
           :password,
-          :name,
+          :first_name,
+          :last_name,
           :age,
-          :phone_number,
+          :phone_number
           #:uid,
           #:provider,
         )
