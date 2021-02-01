@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :proficiencies
   resources :languages
   resources :campaigns
+  resources :users
 
   resources :users do
     resources:characters, shallow: true

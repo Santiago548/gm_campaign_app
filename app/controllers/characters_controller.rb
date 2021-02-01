@@ -14,7 +14,11 @@ class CharactersController < ApplicationController
     end 
     
     def index
-        @characters = Character.all 
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+        @characters = @user.shoes
+        else
+        @characters =Character.all
+        end
     end 
 
     def create
