@@ -1,2 +1,25 @@
 <%= flash[:message] %>
-<h1>All availble characters</h1>
+<% if @user %>
+    <h2><%= @user.name %>'s characters</h2>
+<% else%>
+    <h1>All availble characters</h1>
+    <% end %>
+
+   <% @characters.each do |c| %>
+    Name: <%= c.name %><br />
+    Level: <%= c.name %>
+    Race: <%= c.race %><br />
+    Class: <%= c.class %><br />
+    Armor Class: <%= u.armor_class %><br />
+    Speed: <%= c.speed %><br />
+    Strength: <%= c.strength %><br />
+    Dexterity: <%= c.dexterity %><br />
+    Constitution: <%= c.constitution %><br />
+    Intelligence: <%= c.intelligence %><br />
+    Wisdom: <%= c.wisdom %><br />
+    Charisma: <%= c.charisma %><br />
+    Languages: <%= c.language_1 %>, <%= c.language_2 %>, <%= c.language_3 %><br />
+    Weapon Proficiencies:<%= c.weapon_1 %>, <%= c.weapon_2 %><br />
+    Armor Proficiencies: <%= c.armor_1 %>, <%= c.armor_2 %><br />
+    Skill Proficiencies: <%= c.skill_1 %>, <%= c.skill_2 %>
+<% end %>

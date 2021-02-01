@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_234014) do
+ActiveRecord::Schema.define(version: 2021_02_01_211955) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 2021_01_27_234014) do
     t.integer "intelligence"
     t.integer "wisdom"
     t.integer "charisma"
-    t.integer "proficiency_id"
-    t.integer "language_id"
     t.integer "player_id"
     t.integer "campaign_id"
     t.datetime "created_at", precision: 6, null: false
@@ -53,6 +51,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_234014) do
     t.string "language_3"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "character_id"
   end
 
   create_table "proficiencies", force: :cascade do |t|
@@ -64,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_234014) do
     t.string "skill_2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "character_id"
   end
 
   create_table "users", force: :cascade do |t|
