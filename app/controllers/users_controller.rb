@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     
     def create
         if (user = User.create(user_params))
-          session[:player_id] = user.id
+          session[:user_id] = user.id
           redirect_to user_path(user)
         else
           render 'new'
@@ -40,9 +40,8 @@ class UsersController < ApplicationController
           :name,
           :age,
           :phone_number,
-          :uid,
-          :provider,
-          :game_master
+          #:uid,
+          #:provider,
         )
     end
 end

@@ -3,6 +3,7 @@
     <h2><%= msg %></h2>
   </div>
 <% end %>
+LOG-IN
 <%= form_with(url: '/login') do |f| %>
     <%= f.label :email %>
     <%= f.email_field :email %>
@@ -10,3 +11,5 @@
     <%= f.password_field :password %>
     <%= f.submit "Log in" %>
 <% end %>
+
+<%= link_to "Sign up", '/users/new' %>
