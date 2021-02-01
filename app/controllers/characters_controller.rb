@@ -42,14 +42,15 @@ class CharactersController < ApplicationController
 
     def destroy
         character = Character.find(params[:id])
+        current_user && current_user.id == character.user_id
         character.destroy
-        redirect_to character_path
+        redirect_to characters_path
     end 
 
 
     private
 
     def character_params
-        params.require(:character).permit(:name, :level,:race, :class, :armor_class, :speed, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma, :proficiency_id, :language_id, :player_id, :campaign_id)
+        params.require(:character).permit(:name, :level,:race, :class, :armor_class, :speed, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma) #:player_id, :campaign_id)
     end 
 end
