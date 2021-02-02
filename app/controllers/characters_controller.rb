@@ -69,8 +69,8 @@ class CharactersController < ApplicationController
             :intelligence, 
             :wisdom, 
             :charisma,
-            languages: [:language_1, :language_2, :language_3],
-            proficiencies: [:weapon_1, :weapon_2, :armor_1, :armor_2, :skill_1, :skill_2]
+            languages_attributes: [:language_1, :language_2, :language_3],
+            proficiencies_attributes: [:weapon_1, :weapon_2, :armor_1, :armor_2, :skill_1, :skill_2]
         ) #:player_id, :campaign_id)
     end 
 end

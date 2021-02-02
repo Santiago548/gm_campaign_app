@@ -15,24 +15,34 @@
   CHARISMA: +<%= f.select :charisma, (1..6) %><br />
   LANGUAGES:<br />
     <%= f.fields_for :languages do |lang| %>
-      language one: <%= lang.select :language_1, (character_language) %><br />
-      language two: <%= lang.select :language_2, (character_language) %><br />
-      language three: <%= lang.select :language_3, (character_language) %><br />
+      <%= lang.label :language_1 %> 
+      <%= lang.select :language_1, (character_language) %><br />
+      <%= lang.label :language_2 %> 
+      <%= lang.select :language_2, (character_language) %><br />
+      <%= lang.label :language_3 %>
+      <%= lang.select :language_3, (character_language) %><br />
     <% end %>
   WEAPON PROFICENCY:<br />
     <%= f.fields_for :proficiencies do |weap| %>
-      Weapon: <%= weap.select :weapon_1, (character_weapons) %><br />
-      Weapon: <%= weap.select :weapon_2, (character_weapons) %><br />
+      <%= weap.label :weapon_1 %>
+      <%= weap.select :weapon_1, (character_weapons) %><br />
+      <%= weap.label :weapon_2 %>
+      <%= weap.select :weapon_2, (character_weapons) %><br />
     <% end %>
   ARMOR PROFICENCEY:<br />
     <%= f.fields_for :proficiencies do |arm| %>
-      armor: <%= arm.select :armor_1, (character_armor) %><br />
-      armor: <%= arm.select :armor_2, (character_armor) %><br />
+      <%= arm.label :armor_1 %>
+      <%= arm.select :armor_1, (character_armor) %><br />
+      <%= arm.label :armor_2 %>
+       <%= arm.select :armor_2, (character_armor) %><br />
     <% end %>
   SKILLS:<br />
     <%= f.fields_for :proficiencies do |sk| %>
-      SKILL PROF: <%= sk.select :skill_1, (character_skills) %><br />
-      SKILL PROF: <%= sk.select :skill_2, (character_skills) %><br />
+      <%= sk.label :skill_1 %>
+      <%= sk.select :skill_1, (character_skills) %><br />
+      <%= sk.label :skill_2 %>
+      <%= sk.select :skill_2, (character_skills) %><br />
     <% end %>
+    
   <%= f.submit %>
 <% end %>

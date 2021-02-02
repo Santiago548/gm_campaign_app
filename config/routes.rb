@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
  root 'sessions#welcome'
- resources :users
+ 
  resources :characters
  resources :users do
     resources:characters, shallow: true
@@ -15,8 +15,8 @@ Rails.application.routes.draw do
  post '/login', to: 'sessions#create'
  delete '/login', to: 'sessions#destroy'
 
- get '/signup', to: 'users#new'
- post '/signup', to: 'users#create'
+ get '/users/new', to: 'users#new'
+ post '/users/new', to: 'users#create'
 
   resources :proficiencies
   resources :languages

@@ -22,7 +22,7 @@
           <%= link_to("HI Sign Up", new_user_path) %>
           <%= link_to("Log in", login_path) %>
         <% end %>
-        <% if current_user %>
+        <% if current_user && logged_in? %>
           <%= link_to "#{current_user.first_name}'s profile", user_path(current_user)%>
           <%= link_to "Log Out", '/login', method:'delete' %>
         <% end %>
