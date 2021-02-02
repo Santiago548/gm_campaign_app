@@ -2,11 +2,16 @@ class CharactersController < ApplicationController
     #layout 'character'
     def new
         # possible working method, may need to refactor.
-        if !!nil
         @character = Character.new
-        else
-            render :new
-        end
+        @character.languages.build(language_1: 'language one')
+        @character.languages.build(language_2: 'language two')
+        @character.languages.build(language_3: 'language three')
+        @character.proficiencies.build(weapon_1: 'weapon_1')
+        @character.proficiencies.build(weapon_2: 'weapon_2')
+        @character.proficiencies.build(armor_1: 'armor_1')
+        @character.proficiencies.build(armor_2: 'armor_2')
+        @character.proficiencies.build(skill_1: 'weapon_1')
+        @character.proficiencies.build(skill_2: 'skill_2')
     end 
 
     def show
@@ -51,6 +56,21 @@ class CharactersController < ApplicationController
     private
 
     def character_params
-        params.require(:character).permit(:name, :level,:race, :class, :armor_class, :speed, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma) #:player_id, :campaign_id)
+        params.require(:character).permit(
+            :name, 
+            :level, 
+            :race, 
+            :character_class, 
+            :armor_class, 
+            :speed, 
+            :strength, 
+            :dexterity, 
+            :constitution, 
+            :intelligence, 
+            :wisdom, 
+            :charisma,
+            languages: [:language_1, :language_2, :language_3],
+            proficiencies: [:weapon_1, :weapon_2, :armor_1, :armor_2, :skill_1, :skill_2]
+        ) #:player_id, :campaign_id)
     end 
 end

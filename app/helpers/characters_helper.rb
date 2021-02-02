@@ -16,7 +16,7 @@ module CharactersHelper
         "Exotic Weapons",]
     end
 
-    def character_class
+    def character_classes
         ["Barbarian",
          "Bard",
          "Cleric",
