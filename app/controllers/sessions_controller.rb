@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  layout 'welcome'
+  #layout 
   def omniauth
       user = User.create_from_omniauth(auth)
     if user.save

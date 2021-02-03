@@ -1,0 +1,6 @@
+<% @campaigns.each do |c| %>
+<h2>Campaign Name: <%=link_to(c.name,  "campaigns/#{c.id}") %></h2>
+<h3>GM Name: <%= c.gm_name.capitalize %></h3></li>
+<h3>Next Session: <%= c.next_session %></h3></li>
+<h3>Session Active: <%= c.session_active %></h3></li>
+<% end %>

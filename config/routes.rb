@@ -18,6 +18,9 @@ Rails.application.routes.draw do
  get '/users/new', to: 'users#new'
  post '/users/new', to: 'users#create'
 
+ get '/campaigns/new', to: 'campaigns#new'
+ post '/campaigns/new', to: 'campaigns#create'
+
   resources :proficiencies
   resources :languages
   resources :campaigns
