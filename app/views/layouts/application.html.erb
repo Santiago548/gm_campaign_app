@@ -37,6 +37,9 @@
      <%= button_to("Log Out", '/login', method:'delete') %>
   <% end %>
     <%= yield %>
+    <% if current_user && logged_in? %>
+     <%= button_to("Log Out", '/login', method:'delete') %>
+  <% end %>
   </body>
 </html>
 

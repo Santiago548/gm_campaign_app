@@ -8,11 +8,13 @@ class UsersController < ApplicationController
     end
     
     def create
-        if (user = User.create(user_params))
-          session[:user_id] = user.id
-          redirect_to user_path(user)
+        @user = User.create(user_params)
+        if @user.save
+            session[:user_id] = @user.id
+            redirect_to user_path(@user)
         else
-          render 'new'
+          @errors = @user.errors.full_messages
+          render new_user_path
         end
     end
     
@@ -28,6 +30,16 @@ class UsersController < ApplicationController
         user = User.find_by(id: params[:id])
         user.update(user_params)
         redirect_to user_path(user)
+    end
+
+    def delete
+        user = Character.find_by_id(params[:id])
+        if logged_in? && current_player.id == user.player_id
+            user.destroy
+            redirect to '/user'
+        else
+            erb :'/characters/error'
+        end
     end
 
     private
