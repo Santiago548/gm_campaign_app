@@ -12,12 +12,38 @@
   </head>
 
   <body>
-   <div class="navbar">
-    <%= link_to("Log in with Google", '/auth/google_oauth2', method: :post) %>
-    <%= link_to("Characters", '/characters') %>
-    <%= link_to("Players", '/users') %>
-    <%= link_to("Campaigns", '/campaigns') %>
-    
+
+    <div class="navbar">
+      <%= link_to("Log in with Google", '/auth/google_oauth2', method: :post) %>
+
+      <div class="dropdown">
+      <button class="dropbtn">Campaigns
+        <i class="fa fa-caret-down"></i>
+      </button>
+        <div class="dropdown-content">
+          <%= link_to("Campaign List", '/campaigns') %>
+          <%= link_to("Create a Campaign", new_campaign_path) %>
+        </div>
+      </div>
+      
+      <div class="dropdown">
+      <button class="dropbtn">Players
+        <i class="fa fa-caret-down"></i>
+      </button>
+        <div class="dropdown-content">
+          <%= link_to("Players List", '/users') %>
+        </div>
+      </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Characters
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <%= link_to("Character List", '/characters') %>
+        <%= link_to("Create a Character", new_character_path) %>
+      </div>
+    </div> 
 
       <% if !current_user %>
           <%= link_to("HI Sign Up", new_user_path) %>
@@ -27,8 +53,8 @@
           <%= link_to "#{current_user.first_name}'s profile", user_path(current_user)%>
           <%= link_to "Log Out", '/login', method:'delete' %>
         <% end %>
-  
   </div>
+
   <h1>Campaign APP</h1>
   <% if !current_user && !logged_in? %>
    <%= button_to("Log in with Google", '/auth/google_oauth2', method: :post) %><br />
