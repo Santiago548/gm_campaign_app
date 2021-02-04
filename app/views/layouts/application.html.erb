@@ -14,9 +14,9 @@
   <body>
    <div class="navbar">
     <%= link_to("Log in with Google", '/auth/google_oauth2', method: :post) %>
-    <%= link_to("See All The Characters", '/characters') %>
-    <%= link_to("See All The Players", '/users') %>
-    <%= link_to("See All The Campaigns", '/campaigns') %>
+    <%= link_to("Characters", '/characters') %>
+    <%= link_to("Players", '/users') %>
+    <%= link_to("Campaigns", '/campaigns') %>
     
 
       <% if !current_user %>

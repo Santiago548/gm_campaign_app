@@ -13,3 +13,8 @@
 <li><h3>Session Active: <%= @campaign.session_active %></h3></li>
 <li><h3>Quest Log: <%= @campaign.quest_log %></h3></li>
 </ul> 
+
+<% # need to make ability to delete campaign if GM %>
+<% # if current_user && logged_in? %>
+     <%= button_to("Delete Campaign", "/campaigns/#{@campaign.id}", method:'delete') %>
+ <% # end %>

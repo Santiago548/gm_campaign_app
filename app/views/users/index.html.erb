@@ -1,6 +1,6 @@
 <h2>all players</h2>
 <% @users.each do |u| %>
-    Username: <%= u.username %><br />
+    Username: <%=link_to(u.username,  "users/#{u.id}") %><br />
     Name: <%= u.first_name %> <%= u.last_name %><br />
     Email: <%= u.email %><br /><br />
 <% end %>

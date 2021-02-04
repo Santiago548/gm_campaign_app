@@ -19,8 +19,11 @@ Rails.application.routes.draw do
  post '/users/new', to: 'users#create'
  delete '/users/:id', to: 'users#destroy' 
 
+ # get '/campaigns', to: 'campaigns#index'
+ # get '/campaigns/:id', to: 'campaigns#show'
  get '/campaigns/new', to: 'campaigns#new'
  post '/campaigns/new', to: 'campaigns#create'
+ delete '/campaigns/:id', to: 'campaigns#destroy'
 
   resources :proficiencies
   resources :languages
