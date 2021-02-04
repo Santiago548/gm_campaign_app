@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    include ApplicationHelper
     def index
         @users = User.all
     end
@@ -32,13 +33,13 @@ class UsersController < ApplicationController
         redirect_to user_path(user)
     end
 
-    def delete
-        user = Character.find_by_id(params[:id])
-        if logged_in? && current_player.id == user.player_id
-            user.destroy
-            redirect to '/user'
+    def destroy
+        @user = User.find_by(id: params[:id])
+        if logged_in? && current_user.id == @user.id
+            @user.destroy
+            redirect to '/users'
         else
-            erb :'/characters/error'
+            redirect_to '/login'
         end
     end
 
