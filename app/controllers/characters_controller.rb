@@ -3,6 +3,8 @@ class CharactersController < ApplicationController
     def new
         # possible working method, may need to refactor.
         @character = Character.new
+        @users = User.all
+        @campaigns = Campaign.all
         @character.languages.build(language_1: 'language one')
         @character.languages.build(language_2: 'language two')
         @character.languages.build(language_3: 'language three')
@@ -31,7 +33,8 @@ class CharactersController < ApplicationController
         if @character.save
             redirect_to character_path(@character)
         else
-            render :new
+            @errors = @character.errors.full_messages
+            render new_character_path
         end
     end 
 
@@ -69,7 +72,7 @@ class CharactersController < ApplicationController
             :intelligence, 
             :wisdom, 
             :charisma,
-            :player_id, 
+            :user_id, 
             :campaign_id,
             languages_attributes: [:language_1, :language_2, :language_3],
             proficiencies_attributes: [:weapon_1, :weapon_2, :armor_1, :armor_2, :skill_1, :skill_2]

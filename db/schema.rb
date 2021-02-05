@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_01_233941) do
+ActiveRecord::Schema.define(version: 2021_02_05_195559) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_02_01_233941) do
     t.integer "intelligence"
     t.integer "wisdom"
     t.integer "charisma"
-    t.integer "player_id"
+    t.integer "user_id"
     t.integer "campaign_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
