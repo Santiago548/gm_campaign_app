@@ -16,5 +16,6 @@
 
 <% # need to make ability to delete campaign if GM %>
 <% # if current_user && logged_in? %>
+    <%= link_to "Edit Campaign", edit_campaign_path(@campaign) %>
      <%= button_to("Delete Campaign", "/campaigns/#{@campaign.id}", method:'delete') %>
  <% # end %>

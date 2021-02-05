@@ -5,5 +5,6 @@
 <li><h3>Phone Number: <%= @user.phone_number %></h3></li>
 </ul> 
  <% if current_user && logged_in? %>
-     <%= button_to("Delete Account", current_user, method:'destroy') %>
+    <%= link_to "Edit Your Information", edit_user_path(@user) %>
+    <%= button_to("Delete Account", current_user, method:'destroy') %>
  <% end %>
