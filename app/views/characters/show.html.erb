@@ -12,9 +12,16 @@
     Intelligence: <%= @character.intelligence %><br />
     Wisdom: <%= @character.wisdom %><br />
     Charisma: <%= @character.charisma %><br />
-    Languages: <%= @character.language_1 %>, <%= @character.language_2 %>, <%= @character.language_3 %><br />
-    Weapon Proficiencies:<%= @character.weapon_1 %>, <%= @character.weapon_2 %><br />
-    Armor Proficiencies: <%= @character.armor_1 %>, <%= @character.armor_2 %><br />
-    Skill Proficiencies: <%= @character.skill_1 %>, <%= @character.skill_2 %><br />
+    Languages: <%= @character.languages.each do |lang| %>, 
+               <%= lang %>
+               <% end %><br />
+    Weapon Proficiencies:<%= @character.proficiencies.each do |prof| %>
+                         <%= prof %>
+                         <% end %><br />
+    Armor Proficiencies: 
+    Skill Proficiencies: 
     <%= link_to "Edit Character", edit_character_path(@character) %>
     <%= button_to("delete character", '/characters/destroy') %>
+
+
+    

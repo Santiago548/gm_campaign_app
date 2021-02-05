@@ -2,12 +2,17 @@ Rails.application.routes.draw do
  root 'sessions#welcome'
  
  resources :characters
+
+
+
  resources :users do
-    resources:characters, shallow: true
+    resources :characters, shallow: true
  end
 
- get 'characters/new', to: 'characters#new'
- post 'characters/new', to: 'characters#create'
+ get '/characters/new', to: 'characters#new'
+ post '/characters/new', to: 'characters#create'
+ get '/characters/:id/edit', to: 'characters#edit'
+ patch '/characters/:id', to: 'characters#update'
 
  get 'auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post]
 

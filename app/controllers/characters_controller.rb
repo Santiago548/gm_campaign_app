@@ -44,17 +44,19 @@ class CharactersController < ApplicationController
 
     def update
         character = Character.find(params[:id])
+        # if logged_in? && current_user.id == character.user_id
         character.update(character_params)
         redirect_to character_path(character)
+        # end
     end 
 
     def destroy
         character = Character.find(params[:id])
-        current_user && current_user.id == character.user_id
+        # if current_user && current_user.id == character.user_id
         character.destroy
         redirect_to characters_path
+        # end 
     end 
-
 
     private
 
