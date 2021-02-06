@@ -67,8 +67,13 @@ class CharactersController < ApplicationController
             :charisma,
             :user_id, 
             :campaign_id,
-            language_attributes: [:language_1, :language_2, :language_3],
-            proficiencie_attributes: [:weapon_1, :weapon_2, :armor_1, :armor_2, :skill_1, :skill_2]
+            :language_1, 
+            :language_2,
+            :weapon_1,
+            :weapon_2,
+            :armor_1,
+            :skill_1,
+            :skill_2
         ) 
     end 
 end
