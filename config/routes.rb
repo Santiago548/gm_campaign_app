@@ -2,10 +2,11 @@ Rails.application.routes.draw do
  root 'sessions#welcome'
  
  resources :characters
- 
- resources :users do
-    resources :characters, shallow: true
- end
+ resources :users
+ resources :campaigns
+ get '/users/new', to: 'users#new'
+ post '/users/new', to: 'users#create'
+ delete 'users/:id', to: 'users#destroy'
 
  get '/characters/new', to: 'characters#new'
  post '/characters/new', to: 'characters#create'
@@ -18,19 +19,13 @@ Rails.application.routes.draw do
  post '/login', to: 'sessions#create'
  delete '/login', to: 'sessions#destroy'
 
- get '/users/new', to: 'users#new'
- post '/users/new', to: 'users#create'
- delete 'users/:id', to: 'users#destroy'
+
 
  # get '/campaigns', to: 'campaigns#index'
  # get '/campaigns/:id', to: 'campaigns#show'
  get '/campaigns/new', to: 'campaigns#new'
  post '/campaigns/new', to: 'campaigns#create'
  delete '/campaigns/:id', to: 'campaigns#destroy'
-
-  resources :proficiencies
-  resources :languages
-  resources :campaigns
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -30,14 +30,14 @@ class CharactersController < ApplicationController
     end 
 
     def edit
-        @character = Character.find(params[:id])
+        @character = Character.find_by(id: params[:id])
     end
 
     def update
-        character = Character.find(params[:id])
+        @character = Character.find_by(id: params[:id])
         # if logged_in? && current_user.id == character.user_id
-        character.update(character_params)
-        redirect_to character_path(character)
+        @character.update(character_params)
+        redirect_to character_path(@character)
         # end
     end 
 
