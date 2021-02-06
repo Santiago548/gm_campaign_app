@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_05_195559) do
+ActiveRecord::Schema.define(version: 2021_02_06_000153) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
@@ -43,27 +43,13 @@ ActiveRecord::Schema.define(version: 2021_02_05_195559) do
     t.integer "campaign_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "languages", force: :cascade do |t|
     t.string "language_1"
     t.string "language_2"
-    t.string "language_3"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "character_id"
-  end
-
-  create_table "proficiencies", force: :cascade do |t|
     t.string "weapon_1"
     t.string "weapon_2"
     t.string "armor_1"
-    t.string "armor_2"
     t.string "skill_1"
     t.string "skill_2"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "character_id"
   end
 
   create_table "users", force: :cascade do |t|

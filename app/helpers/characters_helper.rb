@@ -1,5 +1,5 @@
 module CharactersHelper
-    def character_language
+    def character_languages
         ["Common",
         "Dwarvish",
         "Elvish",
@@ -12,7 +12,7 @@ module CharactersHelper
     def character_weapons
         ["Simple Weapons",
         "Martial Weapons",
-        "Firearms Weapons",
+        "Firearms",
         "Exotic Weapons",]
     end
 
@@ -32,7 +32,7 @@ module CharactersHelper
          "Artificer"]
     end
 
-    def character_armor
+    def character_armors
         ["Unarmored",
          "Light-Armor",
          "Medium-Armor",

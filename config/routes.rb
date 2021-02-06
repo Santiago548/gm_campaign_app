@@ -2,9 +2,7 @@ Rails.application.routes.draw do
  root 'sessions#welcome'
  
  resources :characters
-
-
-
+ 
  resources :users do
     resources :characters, shallow: true
  end
@@ -22,7 +20,7 @@ Rails.application.routes.draw do
 
  get '/users/new', to: 'users#new'
  post '/users/new', to: 'users#create'
- delete '/users/:id', to: 'users#destroy' 
+ delete 'users/:id', to: 'users#destroy'
 
  # get '/campaigns', to: 'campaigns#index'
  # get '/campaigns/:id', to: 'campaigns#show'

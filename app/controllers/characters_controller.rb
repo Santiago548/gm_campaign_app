@@ -5,15 +5,6 @@ class CharactersController < ApplicationController
         @character = Character.new
         @users = User.all
         @campaigns = Campaign.all
-        @character.languages.build(language_1: 'language one')
-        @character.languages.build(language_2: 'language two')
-        @character.languages.build(language_3: 'language three')
-        @character.proficiencies.build(weapon_1: 'weapon_1')
-        @character.proficiencies.build(weapon_2: 'weapon_2')
-        @character.proficiencies.build(armor_1: 'armor_1')
-        @character.proficiencies.build(armor_2: 'armor_2')
-        @character.proficiencies.build(skill_1: 'weapon_1')
-        @character.proficiencies.build(skill_2: 'skill_2')
     end 
 
     def show
@@ -76,8 +67,8 @@ class CharactersController < ApplicationController
             :charisma,
             :user_id, 
             :campaign_id,
-            languages_attributes: [:language_1, :language_2, :language_3],
-            proficiencies_attributes: [:weapon_1, :weapon_2, :armor_1, :armor_2, :skill_1, :skill_2]
+            language_attributes: [:language_1, :language_2, :language_3],
+            proficiencie_attributes: [:weapon_1, :weapon_2, :armor_1, :armor_2, :skill_1, :skill_2]
         ) 
     end 
 end
