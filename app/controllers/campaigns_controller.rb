@@ -5,6 +5,7 @@ class CampaignsController < ApplicationController
 
     def show
         @campaign = Campaign.find_by(id: params[:id])
+        @characters = Character.all
     end 
     
     def index

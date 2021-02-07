@@ -1,6 +1,9 @@
 <h2>Your chosen character</h2><br />
 User Name: <%= @character.user.first_name %><br />
-Campaign: <%= @character.campaign.name %><br />
+Campaign: <%= link_to(@character.campaign.name.capitalize,  campaign_path(@character.campaign_id)) %><br />
+ 
+
+<%= @character.campaign.name %><br />
 
     Name: <%= @character.name %><br />
     Level: <%= @character.name %>

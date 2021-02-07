@@ -1,19 +1,30 @@
-<h1>Campaign Name: <%= @campaign.name %></h1><br />
+<h1>CAMPAIGN NAME: <%= @campaign.name.capitalize %></h1>
 <h1>GAME-MASTER INFO:</h1>
 <ul>
-<li><h3>GM Name: <%= @campaign.gm_name.capitalize %></h3></li>
-<li><h3>GM Phone Number: <%= @campaign.gm_phone_number %></h3></li>
-<li><h3>Gm Email: <%= @campaign.gm_email %></h3></li>
+    <li><h3>GM Name: <%= @campaign.gm_name.capitalize %></h3></li>
+    <li><h3>GM Phone Number: <%= @campaign.gm_phone_number %></h3></li>
+    <li><h3>Gm Email: <%= @campaign.gm_email %></h3></li>
 </ul>
 <h1>CAMPAIGN INFO:</h1>
 <ul>
-<li><h3>Start Date: <%= @campaign.start_date %></h3></li>
-<li><h3>End Date: <%= @campaign.end_date %></h3></li>
-<li><h3>Next Session: <%= @campaign.next_session %></h3></li>
-<li><h3>Session Active: <%= @campaign.session_active %></h3></li>
-<li><h3>Quest Log: <%= @campaign.quest_log %></h3></li>
+    <li><h3>Start Date: <%= @campaign.start_date %></h3></li>
+    <li><h3>End Date: <%= @campaign.end_date %></h3></li>
+    <li><h3>Next Session: <%= @campaign.next_session %></h3></li>
+    <li><h3>Session Active: <%= @campaign.session_active %></h3></li>
+    <li><h3>Quest Log: <%= @campaign.quest_log %></h3></li>
 </ul> 
-
+<h1>CAMPAIGN CHARACTERS:</h1>
+<% if @characters.exists? %>
+<ul>
+    <% @characters.each do |c| %>
+        <li><h3><%=link_to(c.name.capitalize,  character_path(c.id)) %> The <%= c.race %> <%= c.character_class %></h3></li>
+        <% end %>
+        <% else %>
+        <%= "No charcaters in this campaign" %>
+    <% end %>
+    
+        
+    </ul>
 <% # need to make ability to delete campaign if GM %>
 <% # if current_user && logged_in? %>
     <%= link_to "Edit Campaign", edit_campaign_path(@campaign) %>
