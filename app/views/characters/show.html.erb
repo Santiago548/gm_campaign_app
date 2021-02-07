@@ -18,7 +18,7 @@ Campaign: <%= @character.campaign.name %><br />
     Weapon Proficiencies: <%= @character.weapon_1 %>, <%= @character.weapon_1 %><br />
     Armor Proficiencies: <%= @character.armor_1 %><br />
     Skill Proficiencies: <%= @character.skill_1 %>, <%= @character.skill_2 %><br />
-    <%= link_to "Edit Character", edit_character_path(@character) %>
+    <%= link_to "Edit Character", edit_character_path(@character.id) %>
     <%= button_to("delete character", '/characters/destroy') %>
 
 

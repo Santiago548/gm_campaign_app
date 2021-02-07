@@ -1,6 +1,6 @@
 <h1>hi</h1>
 
-<%= form_for :character do |f| %>
+<%= form_for @character do |f| %>
   NAME: <%= f.text_field :name %><br />
   LEVEL: <%= f.select :level, (1..20) %><br />
   RACE: <%= f.select :race, (character_race) %><br />

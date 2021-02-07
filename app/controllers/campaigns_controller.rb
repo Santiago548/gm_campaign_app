@@ -40,6 +40,15 @@ class CampaignsController < ApplicationController
     private
 
     def campaign_params
-        params.require(:campaign).permit(:name, :gm_name, :gm_email, :gm_phone_number, :start_date, :end_date, :next_session, :session_active, :quest_log)
+        params.require(:campaign).permit(:name,
+            :gm_name,
+            :gm_email, 
+            :gm_phone_number,
+            :start_date,
+            :end_date,
+            :next_session,
+            :session_active,
+            :quest_log
+        )
     end 
 end

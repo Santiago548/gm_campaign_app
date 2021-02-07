@@ -1,6 +1,6 @@
 <h1> Player Information</h1>
-<%= form_for :user do |f| %>
-  Username: <%= f.text_field :username %><br />
+<%= form_for @user do |f| %>
+  Username: <%= f.text_field :username%><br />
   E-mail : <%= f.email_field :email %><br />
   Password: <%= f.password_field :password %><br />
   First-Name: <%= f.text_field :first_name %> 

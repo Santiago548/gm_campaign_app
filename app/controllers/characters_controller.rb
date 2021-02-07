@@ -42,7 +42,7 @@ class CharactersController < ApplicationController
     end 
 
     def destroy
-        character = Character.find(params[:id])
+        character = Character.find_by(id: params[:id])
         # if current_user && current_user.id == character.user_id
         character.destroy
         redirect_to characters_path
