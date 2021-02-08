@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
  get '/login', to: 'sessions#new'
  post '/login', to: 'sessions#create'
- delete '/login', to: 'sessions#destroy'
+
+ get '/logout', to: 'sessions#destroy'
+ delete '/logout', to: 'sessions#destroy'
 
  # get '/campaigns', to: 'campaigns#index'
  # get '/campaigns/:id', to: 'campaigns#show'

@@ -1,9 +1,9 @@
 <% flash.each do |type, msg| %>
   <div>
-    <h2><%= msg %></h2>
+    <h2>*<%=type.upcase%>* <%= msg %></h2>
   </div>
 <% end %>
-LOG-IN
+LOG-IN BELOW 
 <%= form_with(url: '/login') do |f| %>
     <%= f.label :email %>
     <%= f.email_field :email %>
@@ -11,5 +11,5 @@ LOG-IN
     <%= f.password_field :password %>
     <%= f.submit "Log in" %>
 <% end %>
-
+<br>
 <%= link_to "Sign up", '/users/new' %>
