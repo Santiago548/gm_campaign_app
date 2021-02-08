@@ -108,31 +108,33 @@ module CharactersHelper
     def character_logo
         case @character.character_class 
             when "Ranger"
-                <img src="/images/ranger.png" alt="Ranger" style="width:50px;height:50px;float:left;">
+                image_tag "/images/ranger.png", style: 'width:100px;height:100px;float:right;'
             when "Artificer"
-                <img src="/images/artificer.png" alt="Artificer" style="width:50px;height:50px;float:left;">
+                image_tag "/images/artificer.png", style: 'width:100px;height:100px;float:right;'
             when "Barbarian"
-                <img src="/images/barbarian.png" alt="Barbarian" style="width:50px;height:50px;float:left;">
+                image_tag "/images/barbarian.png", style: 'width:100px;height:100px;float:right;'
             when "Bard"
-                <img src="/images/bard.png" alt="Bard" style="width:50px;height:50px;float:left;">
+                image_tag "/images/ranger.png", style: 'width:100px;height:100px;float:right;'
             when "Druid"
-                <img src="/images/druid.png" alt="Druid" style="width:50px;height:50px;float:left;">
+                image_tag "/images/druid.png", style: 'width:100px;height:100px;float:right;'
             when "Fighter"
-                <img src="/images/fighter.png" alt="Fighter" style="width:50px;height:50px;float:left;">
+                image_tag "/images/fighter.png", style: 'width:100px;height:100px;float:right;'
             when "Monk"
-                <img src="/images/monk.png" alt="Monk" style="width:50px;height:50px;float:left;">
+                image_tag "/images/monk.png", style: 'width:100px;height:100px;float:right;'
             when "Paladin"
-                <img src="/images/paladin.png" alt="Palading" style="width:50px;height:50px;float:left;">
+                image_tag "/images/paladin.png", style: 'width:100px;height:100px;float:right;'
             when "Cleric"
-                <img src="/images/cleric.png" alt="D20" style="width:50px;height:50px;float:left;">
+                image_tag "/images/cleric.png", style: 'width:100px;height:100px;float:right;'
             when "Rogue"
-                <img src="/images/rogue.png" alt="D20" style="width:50px;height:50px;float:left;">
+                image_tag "/images/rouge.png", style: 'width:100px;height:100px;float:right;'
             when "Sorcerer"
-                <img src="/images/sorcerer.png" alt="D20" style="width:50px;height:50px;float:left;">
+                image_tag "/images/sorcerer.png", style: 'width:100px;height:100px;float:right;'
             when "Warlock"
-                <img src="/images/warlock.png" alt="D20" style="width:50px;height:50px;float:left;">
+                image_tag "/images/warlock.png", style: 'width:100px;height:100px;float:right;'
             when "Wizard"
-                <img src="/images/wizard.png" alt="D20" style="width:50px;height:50px;float:left;">
-        end
+                image_tag "/images/wizard.png", style: 'width:100px;height:100px;float:right;'
+            else
+                "nope"
+            end
     end
 end
