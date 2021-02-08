@@ -1,4 +1,4 @@
-<h1> Player Information</h1>
+<h1> User Information</h1>
 <%= form_for @user do |f| %>
   Username: <%= f.text_field :username%><br />
   E-mail : <%= f.email_field :email %><br />
@@ -6,5 +6,6 @@
   First-Name: <%= f.text_field :first_name %> 
   Last-Name: <%= f.text_field :last_name %><br />
   Phone Number: <%= f.phone_field :phone_number %><br />
+  Game Master: <%= f.check_box :game_master %><br />
   <%= f.submit %>
 <% end %>

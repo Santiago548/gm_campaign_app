@@ -52,7 +52,8 @@ class UsersController < ApplicationController
           :first_name,
           :last_name,
           :age,
-          :phone_number
+          :phone_number,
+          :game_master
           #:uid,
           #:provider,
         )

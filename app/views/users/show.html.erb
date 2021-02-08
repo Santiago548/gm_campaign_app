@@ -1,4 +1,8 @@
-<h1>Player Name: <%= @user.first_name %> <%= @user.last_name %></h1>
+<% if @user.game_master == true %>
+<h1>Game Master Name: <%= @user.first_name %> <%= @user.last_name %></h1>
+<% else %>
+   <h1>Player Name: <%= @user.first_name %> <%= @user.last_name %></h1>
+<% end %>
 <ul>
 <li><h3>Username: <%= @user.username %></h3></li>
 <li><h3>Email: <%= @user.email %></h3></li>

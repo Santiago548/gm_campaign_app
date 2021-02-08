@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_06_000153) do
+ActiveRecord::Schema.define(version: 2021_02_08_194549) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 2021_02_06_000153) do
     t.string "provider"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "game_master"
   end
 
 end

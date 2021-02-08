@@ -4,14 +4,14 @@ module ApplicationHelper
     end
 
     def logged_in?
-        !!session[:user_id]
+        !!current_user
     end
 
-    #def layout_pref
-        #if logged_in? && current_user.game_master == true
-            #layout 'game_master'
-        #else
-            #layout 'application'
-        #end
-    #end
+    def layout_pref
+        if logged_in? && current_user.game_master == true
+            render partial: 'layouts/game_master'
+        else
+            render partial: 'layouts/player'
+        end
+    end
 end
