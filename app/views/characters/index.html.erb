@@ -2,13 +2,12 @@
 <% if @user %>
     <h2><%= @user.name %>'s characters</h2>
 <% else%>
-    <h1>All availble characters</h1>
+    <h1>All CHARACTERS:</h1>
     <% end %>
 
    <% @characters.each do |c| %>
-   
     Name:  <%=link_to(c.name,  "characters/#{c.id}") %><br />
     Level: <%= c.level %><br />
     Race: <%= c.race %><br />
-    Class: <%= c.class %><br />
+    Class: <%= c.character_class %><br /><br />
 <% end %>

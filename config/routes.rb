@@ -3,7 +3,7 @@ Rails.application.routes.draw do
  get '/characters/new', to: 'characters#new'
  post '/characters/new', to: 'characters#create'
  patch '/characters/:id/edit', to: 'characters#update'
- delete '/characters/', to: 'characters#destroy'
+ delete '/characters/:id', to: 'characters#destroy'
 
  get 'auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post]
 

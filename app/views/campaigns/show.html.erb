@@ -7,10 +7,15 @@
 </ul>
 <h1>CAMPAIGN INFO:</h1>
 <ul>
-    <li><h3>Start Date: <%= @campaign.start_date %></h3></li>
-    <li><h3>End Date: <%= @campaign.end_date %></h3></li>
-    <li><h3>Next Session: <%= @campaign.next_session %></h3></li>
-    <li><h3>Session Active: <%= @campaign.session_active %></h3></li>
+    <li><h3>Start Date: <%= @campaign.start_date.strftime( "%a, %B, %e") %></h3></li>
+    <li><h3>End Date: <%= @campaign.end_date.strftime( "%a, %B, %e") %></h3></li>
+    <li><h3>Next Session: <%= @campaign.next_session.strftime( "%a, %B, %e") %></h3></li>
+    <li><h3>Session Active:
+            <% if @campaign.session_active == true%>
+            <%= "the group is out questing" %></h3>
+            <% else %>
+            <%= "The group is in the tavern" %></li>
+            <% end %></h3></li>
     <li><h3>Quest Log: <%= @campaign.quest_log %></h3></li>
 </ul> 
 <h1>CAMPAIGN CHARACTERS:</h1>
@@ -28,5 +33,6 @@
 <% # need to make ability to delete campaign if GM %>
 <% # if current_user && logged_in? %>
     <%= link_to "Edit Campaign", edit_campaign_path(@campaign) %>
-     <%= button_to("Delete Campaign", "/campaigns/#{@campaign.id}", method:'delete') %>
+         <%= button_to "Delete Campaign", campaign_path(@campaign), method: :delete %>
+
  <% # end %>
