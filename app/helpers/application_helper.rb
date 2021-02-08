@@ -6,4 +6,12 @@ module ApplicationHelper
     def logged_in?
         !!session[:user_id]
     end
+
+    #def layout_pref
+        #if logged_in? && current_user.game_master == true
+            #layout 'game_master'
+        #else
+            #layout 'application'
+        #end
+    #end
 end

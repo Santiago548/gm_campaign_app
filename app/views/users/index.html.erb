@@ -1,4 +1,4 @@
-<h2>all players</h2>
+<h2>ALL PLAYERS:</h2>
 <% @users.each do |u| %>
     Username: <%=link_to(u.username,  "users/#{u.id}") %><br />
     Name: <%= u.first_name %> <%= u.last_name %><br />
