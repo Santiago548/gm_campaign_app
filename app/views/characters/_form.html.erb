@@ -1,5 +1,3 @@
-<h1>hi</h1>
-
 <%= form_for @character do |f| %>
   NAME: <%= f.text_field :name %><br />
   LEVEL: <%= f.select :level, (1..20) %><br />
@@ -24,8 +22,9 @@
     
   SKILLS:<%= f.select :skill_1, (character_skills) %>
          <%= f.select :skill_2, (character_skills) %><br />
-  <%= f.collection_select :user_id, User.order(:username),:id,:username, include_blank: true %><br />
-    <%= f.collection_select :campaign_id, Campaign.order(:name),:id,:name, include_blank: true %><br />
+    <%= f.collection_select :user_id, @users.order(:username),:id,:username, include_blank: true %><br />
+
+    <%= f.collection_select :campaign_id, @campaigns.order(:name),:id,:name, include_blank: true %><br />
   <%= f.submit %>
 <% end %>
  

@@ -1,4 +1,5 @@
 class CharactersController < ApplicationController
+
     def new
         # possible working method, may need to refactor.
         @character = Character.new
