@@ -13,7 +13,7 @@ class CharactersController < ApplicationController
     
     def index
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-        @characters = @user.shoes
+        @characters = @user.characters
         else
         @characters =Character.all
         end

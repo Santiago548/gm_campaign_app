@@ -15,6 +15,7 @@ Rails.application.routes.draw do
  get '/users/:id', to: 'users#show', as: 'user'
  get '/users/:id/edit', to: 'users#edit', as: 'edit_user'
 
+ # get '/characters', to:'characters#index', as: 'characters'
  get '/characters/new', to: 'characters#new'
  post '/characters/new', to: 'characters#create'
  patch '/characters/:id/edit', to: 'characters#update'
@@ -27,8 +28,12 @@ Rails.application.routes.draw do
  delete '/campaigns/:id', to: 'campaigns#destroy'
   
  resources :campaigns
- resources :characters
- resources :users
+ 
+ resources :characters, only: [:index, :new, :show, :edit]
+
+ resources :users do
+  resources :characters
+ end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
