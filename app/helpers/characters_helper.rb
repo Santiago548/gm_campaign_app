@@ -146,4 +146,11 @@ module CharactersHelper
         end
     end
         
+    def display_user_field(t)
+        if params{:user_id}
+            t.hidden_field :user_id
+        else
+            render parital: 'user_select', locals: {f: t}
+        end
+    end
 end
