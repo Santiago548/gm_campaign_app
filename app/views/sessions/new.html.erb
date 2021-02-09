@@ -3,12 +3,16 @@
     <h2>*<%=type.upcase%>* <%= msg %></h2>
   </div>
 <% end %>
-LOG-IN BELOW 
+<h3>LOG-IN BELOW</h3>
 <%= form_with(url: '/login') do |f| %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :email %>:
+    <%= f.email_field :email %><br>
+    OR<br>
+    <%= f.label :username %>:
+    <%= f.email_field :username %><br>
+
+    <%= f.label :password %>: 
+     <%= f.password_field :password %><br><br>
     <%= f.submit "Log in" %>
 <% end %>
 <br>

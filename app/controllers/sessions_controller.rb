@@ -14,15 +14,26 @@ class SessionsController < ApplicationController
   end
 
   def create
-    u = User.find_by_email(params[:email])
-    if u && u.authenticate(params[:password])
-      session[:user_id] = u.id
-      redirect_to user_path(u)
+    !params[:user][:username].blank? ? user = User.find_by_username(params[:user][:username]) : user = User.find_by_email(params[:user][:email])
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+      redirect_to user_path(user)
     else
-      flash[:alert] = "Invalid login, Please try Again"
-      redirect_to '/login'
+      flash[:message] = 'Invalid log in, please try again.'
+      redirect to '/login'
     end
-  end 
+  end
+
+  #def create
+   # u = User.find_by_email(params[:email])
+    #if u && u.authenticate(params[:password])
+      #session[:user_id] = u.id
+      #redirect_to user_path(u)
+    #else
+      #flash[:alert] = "Invalid login, Please try Again"
+      #redirect_to '/login'
+    #end
+  #end 
   
   def destroy
     session[:user_id] = nil

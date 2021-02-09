@@ -1,12 +1,12 @@
 <h2>ALL CAMPAIGNS:</h2>
 <% @campaigns.each do |c| %>
-<h2>Campaign Name: <%=link_to(c.name,  "campaigns/#{c.id}") %></h2>
-<h3>GM Name: <%= c.gm_name.capitalize %></h3></li>
-<h3>Next Session: <%= c.next_session.strftime( "%a, %B, %e") %></h3></li>
-<h3>Session Active: 
+<b>Campaign Name:</b> <%=link_to(c.name,  "campaigns/#{c.id}") %><br>
+<b>GM Name:</b> <%= c.gm_name.capitalize %><br>
+<b>Next Session:</b> <%= c.next_session.strftime( "%a, %B, %e") %><br>
+<b>Session Active:</b> 
     <% if c.session_active == true%>
-    <%= "the group is out questing" %></h3>
+    <%= "the group is out questing" %>
     <% else %>
-    <%= "The group is in the tavern" %></li>
+    <%= "The group is in the tavern awaiting thier next quest." %>
     <% end %>
 <% end %>
