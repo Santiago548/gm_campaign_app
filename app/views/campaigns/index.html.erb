@@ -1,3 +1,7 @@
+<%= #flash[:message] %>
+<%= #display_header %>
+<% # render partial: 'campaign', collection: @campaigns %>
+
 <h2>ALL CAMPAIGNS:</h2>
 <% @campaigns.each do |c| %>
 <b>Campaign Name:</b> <%=link_to(c.name,  "campaigns/#{c.id}") %><br>

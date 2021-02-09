@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   
  resources :campaigns
  
- resources :characters, only: [:index, :new, :show, :edit]
+ resources :characters, only: [:index, :new, :show, :edit, :create]
 
  resources :users do
   resources :characters

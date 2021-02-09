@@ -25,7 +25,9 @@
       <div class="dropdown-content">
         <%= link_to("Character List", '/characters') %>
         <% if logged_in? && current_user.game_master == false%>
+          <%= link_to("Your Characters", user_characters_path(current_user.id)) %>
           <%= link_to("Create a Character", new_character_path) %>
+          <%= link_to("Create your Character", new_user_character_path(current_user.id)) %>
         <% end %>
       </div>
     </div> 

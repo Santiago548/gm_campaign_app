@@ -6,7 +6,9 @@
       </button>
         <div class="dropdown-content">
           <%= link_to("Campaign List", '/campaigns') %>
+          <%= # link_to("Your Characters", user_campaigns_path(current_user.id)) %>
           <%= link_to("Create a Campaign", new_campaign_path) %>
+          
         </div>
       </div>
       

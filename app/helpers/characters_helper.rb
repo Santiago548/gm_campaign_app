@@ -137,4 +137,13 @@ module CharactersHelper
                 "nope"
             end
     end
+
+    def display_header
+        if @user
+            tag.h2("#{@user.first_name.capitalize}'s Characters")
+        else
+            tag.h1("ALL CHARACTERS:")
+        end
+    end
+        
 end

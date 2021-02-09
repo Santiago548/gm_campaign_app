@@ -2,9 +2,14 @@ class CharactersController < ApplicationController
 
     def new
         # possible working method, may need to refactor.
-        @character = Character.new
+        if params[:user_id] && @user = User.find_by_id(params[:user_id])
+           @character = @user.characters.build 
+        else
+            @character = Character.new
+            
         @users = User.all
         @campaigns = Campaign.all
+        end
     end 
 
     def show

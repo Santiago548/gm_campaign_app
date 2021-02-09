@@ -1,10 +1,6 @@
 <%= flash[:message] %>
-<% if @user %>
-    <h2><%= @user.first_name %>'s characters</h2>
-<% else%>
-    <h2>ALL CHARACTERS:</h2>
-    <% end %>
-
+<%= display_header %>
+<% # render partial: 'character', collection: @characters %>
    <% @characters.each do |c| %>
     Name:  <%=link_to(c.name,  "characters/#{c.id}") %><br />
     Level: <%= c.level %><br />
