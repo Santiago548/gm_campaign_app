@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     
     def show
         @user = User.find_by(id: params[:id])
+        @characters = Character.all
     end
 
     def edit

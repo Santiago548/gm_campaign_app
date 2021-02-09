@@ -19,12 +19,14 @@
     <li><h3>Quest Log: <%= @campaign.quest_log %></h3></li>
 </ul> 
 <h1>CAMPAIGN CHARACTERS:</h1>
-<% if @characters.exists? %>
+    <% if @characters.exists?%>
 <ul>
     <% @characters.each do |c| %>
-        <li><h3><%=link_to(c.name.capitalize,  character_path(c.id)) %> The <%= c.race %> <%= c.character_class %></h3></li>
+            <% if c.campaign_id == @campaign.id %>
+                <li><h3><%=link_to(c.name.capitalize,  character_path(c.id)) %> The <%= c.race %> <%= c.character_class %></h3></li>
+            <% end %>
         <% end %>
-        <% else %>
+    <% else %>
         <%= "No charcaters in this campaign" %>
     <% end %>
     

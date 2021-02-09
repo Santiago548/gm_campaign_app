@@ -14,8 +14,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    !params[:user][:username].blank? ? user = User.find_by_username(params[:user][:username]) : user = User.find_by_email(params[:user][:email])
-    if user && user.authenticate(params[:user][:password])
+    !params[:username].blank? ? user = User.find_by_username(params[:username]) : user = User.find_by_email(params[:email])
+    if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to user_path(user)
     else
