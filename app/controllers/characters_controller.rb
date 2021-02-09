@@ -1,14 +1,14 @@
 class CharactersController < ApplicationController
 
     def new
+        @users = User.all
+        @campaigns = Campaign.all
         # possible working method, may need to refactor.
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
            @character = @user.characters.build 
         else
             @character = Character.new
-            
-        @users = User.all
-        @campaigns = Campaign.all
+            @character.build_user
         end
     end 
 

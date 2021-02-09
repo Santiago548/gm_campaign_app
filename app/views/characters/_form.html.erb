@@ -1,5 +1,5 @@
 <%= form_for @character do |f| %>
-<%= display_user_field(f) %>
+  <%= display_user_field(f) %>
   NAME: <%= f.text_field :name %><br />
   LEVEL: <%= f.select :level, (1..20) %><br />
   RACE: <%= f.select :race, (character_race) %><br />

@@ -1,0 +1,3 @@
+<%= f.label :user, "Player:" %>
+<%= f.collection_select :user_id, User.all,:id,:name, prompt: true %><br />
+    
