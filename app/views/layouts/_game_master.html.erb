@@ -1,16 +1,15 @@
-<div class="navbar">
+    <div class="navbar">
 
-      <div class="dropdown">
+    <div class="dropdown">
       <button class="dropbtn">Campaigns
         <i class="fa fa-caret-down"></i>
       </button>
         <div class="dropdown-content">
           <%= link_to("Campaign List", '/campaigns') %>
-          <%= # link_to("Your Characters", user_campaigns_path(current_user.id)) %>
-          <%= link_to("Create a Campaign", new_campaign_path) %>
           
+          <%= link_to("Create a Campaign", new_campaign_path) %>
         </div>
-      </div>
+    </div>
       
       <div class="dropdown">
       <button class="dropbtn">Players
@@ -40,7 +39,7 @@
           <%= link_to "Log Out", logout_path %>
         <% end %>
   </div>
-
+    <img src="/images/D20.png" alt="D20" style="width:100px;height:100px;float:left;">
     <%= image_tag "/images/dm.png", style: 'width:100px;height:100px;float:right;' %>
   <% if logged_in? && current_user.game_master == true %>
       <h1>Game Master Campaign APP</h1>

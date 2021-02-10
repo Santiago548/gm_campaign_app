@@ -26,7 +26,6 @@
         <%= link_to("Character List", '/characters') %>
         <% if logged_in? && current_user.game_master == false%>
           <%= link_to("Your Characters", user_characters_path(current_user.id)) %>
-          <%= link_to("Create a Character", new_character_path) %>
           <%= link_to("Create your Character", new_user_character_path(current_user.id)) %>
         <% end %>
       </div>
@@ -41,7 +40,7 @@
           <%= link_to "Log Out", logout_path %>
         <% end %>
     </div>
-
+    <img src="/images/D20.png" alt="D20" style="width:100px;height:100px;float:left;">
     <% if logged_in? && current_user.game_master == false %>
       <h1>Player Campaign APP</h1>
     <%else %>

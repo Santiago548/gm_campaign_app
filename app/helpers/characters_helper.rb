@@ -142,7 +142,7 @@ module CharactersHelper
         if @user
             tag.h2("#{@user.first_name.capitalize}'s Characters")
         else
-            tag.h1("ALL CHARACTERS:")
+            tag.h2("ALL CHARACTERS:")
         end
     end
         
@@ -151,6 +151,14 @@ module CharactersHelper
             t.hidden_field :user_id
         else
             render parital: 'user_select', locals: {f: t}
+        end
+    end
+
+    def display_nested_header
+        if params[:user_id]
+            tag.h2("Create a new Character for #{@user.first_name}")
+        else
+            tag.h2("Create a New Character")
         end
     end
 end
