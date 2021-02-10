@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
         @campaigns = Campaign.all
         # possible working method, may need to refactor.
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
-           @character = @user.characters.build 
+            @character = @user.characters.build 
         else
             @character = Character.new
             @character.build_user

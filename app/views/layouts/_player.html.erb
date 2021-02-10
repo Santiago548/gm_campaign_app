@@ -14,7 +14,8 @@
         <i class="fa fa-caret-down"></i>
       </button>
         <div class="dropdown-content">
-          <%= link_to("Players List", '/users') %>
+          <%= link_to("Game Masters List", '/users?game_master=true') %>
+          <%= link_to("Players List", '/users?player=true') %>
         </div>
       </div>
 
@@ -40,7 +41,8 @@
           <%= link_to "Log Out", logout_path %>
         <% end %>
     </div>
-    <img src="/images/D20.png" alt="D20" style="width:100px;height:100px;float:left;">
+    <fieldset>
+    <img src="/images/D20.png" alt="D20" style="width:100px;height:100px;float:left;padding:10px;">
     <% if logged_in? && current_user.game_master == false %>
       <h1>Player Campaign APP</h1>
     <%else %>
@@ -49,3 +51,4 @@
   <% if !current_user && !logged_in? %>
    <%= button_to("Log in with Google", '/auth/google_oauth2', method: :post) %><br />
   <% end %>
+  </fieldset><br>

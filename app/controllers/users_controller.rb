@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
+    has_scope :game_master, type: :boolean
+    has_scope :player, type: :boolean
+    
     def index
-        @users = User.all
+       @users = apply_scopes(User).all
     end
 
     def new

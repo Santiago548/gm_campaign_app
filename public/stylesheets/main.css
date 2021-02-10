@@ -57,3 +57,14 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+fieldset {
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+legend {
+  background-color: #ccc9c9;
+  color: rgb(0, 0, 0);
+  padding: 2px 10px;
+}
