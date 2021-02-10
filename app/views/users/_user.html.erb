@@ -1,0 +1,33 @@
+<br><br>
+<fieldset>
+    <% if @user.game_master == true %>
+        <h2>Game Master Name: <%= @user.first_name %> <%= @user.last_name %></h2>
+    <% else %>
+        <h2>Player Name: <%= @user.first_name %> <%= @user.last_name %></h2>
+    <% end %>
+    <ul>
+        <li><h3>Username: <%= @user.username %></h3></li>
+        <li><h3>Email: <%= @user.email %></h3></li>
+        <li><h3>Phone Number: <%= @user.phone_number %></h3></li>
+    </ul>
+</fieldset><br>
+<% if @user.game_master == false %>
+<fieldset>
+<h2>PLAYER CHARACTERS:</h2>
+    <% if @characters.exists?%>
+<ul>
+    <% @characters.each do |c| %>
+            <% if c.user_id == @user.id %>
+                <li><h3><%=link_to(c.name.capitalize,  character_path(c.id)) %> The <%= c.race %> <%= c.character_class %></h3></li>
+            <% end %>
+        <% end %>
+    <% else %>
+        <%= "This Player has no charcaters" %>
+    <% end %>
+    </fieldset>
+<% end %>
+
+ <% if current_user && logged_in? %>
+    <%= link_to "Edit Your Information", edit_user_path(@user) %>
+    <%= button_to("Delete Account", user_path(@user), method: :delete) %>
+ <% end %>

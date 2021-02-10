@@ -1,6 +1,6 @@
 <%= flash[:message] %>
 <%= display_header %>
-<% # render partial: 'character', collection: @characters %>
+<%  # render partial: 'character', collection: @characters %>
    <% @characters.each do |c| %>
     Name:  <%=link_to(c.name,  "characters/#{c.id}") %><br />
     Level: <%= c.level %><br />

@@ -1,23 +1,5 @@
-<h2>Player Name: <%= @character.user.first_name %> <%= @character.user.last_name %></h2>
-<h2>Campaign: <%= link_to(@character.campaign.name.capitalize,  campaign_path(@character.campaign_id)) %></h2>
- <%= character_logo %><br /><br />
-<h2>CHARACTER INFO:</h2>
-    <b>Name:</b> <%= @character.name %><br />
-    <b>Level:</b> <%= @character.level %><br />
-    <b>Race:</b> <%= @character.race %><br />
-    <b>Class:</b> <%= @character.character_class %><br />
-    <b>Armor Class:</b> <%= @character.armor_class %><br />
-    <b>Speed:</b> <%= @character.speed %>ft<br />
-    <b>Strength:</b> +<%= @character.strength %><br />
-    <b>Dexterity:</b> +<%= @character.dexterity %><br />
-    <b>Constitution:</b> +<%= @character.constitution %><br />
-    <b>Intelligence:</b> +<%= @character.intelligence %><br />
-    <b>Wisdom:</b> +<%= @character.wisdom %><br />
-    <b>Charisma:</b> +<%= @character.charisma %><br />
-    <b>Languages:</b> <%= @character.language_1 %>, <%= @character.language_2 %><br />
-    <b>Weapon Proficiencies:</b> <%= @character.weapon_1 %>, <%= @character.weapon_1 %><br />
-    <b>Armor Proficiencies:</b> <%= @character.armor_1 %><br />
-    <b>Skill Proficiencies:</b> <%= @character.skill_1 %>, <%= @character.skill_2 %><br />
+<%= render @character %>
+
     <%= link_to "Edit Character", edit_character_path(@character.id) %>
     <%= button_to "delete", character_path(@character), method: :delete %>
 
