@@ -18,7 +18,7 @@ Rails.application.routes.draw do
  # get '/characters', to:'characters#index', as: 'characters'
  get '/characters/new', to: 'characters#new'
  post '/characters/new', to: 'characters#create'
- patch '/characters/:id/edit', to: 'characters#update'
+ patch '/characters/:id', to: 'characters#update'
  delete '/characters/:id', to: 'characters#destroy'
 
  # get '/campaigns', to: 'campaigns#index'
