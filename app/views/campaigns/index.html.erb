@@ -1,5 +1,7 @@
 
 <h2>ALL CAMPAIGNS:</h2>
+<fieldset>
+
 <% @campaigns.each do |c| %>
 <b>Campaign Name:</b> <%=link_to(c.name,  "campaigns/#{c.id}") %><br>
 <b>GM Name:</b> <%= c.gm_name.capitalize %><br>
@@ -9,5 +11,6 @@
     <%= "the group is out questing" %>
     <% else %>
     <%= "The group is in the tavern awaiting thier next quest." %>
-    <% end %><br><br>
+    <% end %><br><hr>
 <% end %>
+</fieldset>

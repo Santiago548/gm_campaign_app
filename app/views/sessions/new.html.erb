@@ -3,7 +3,8 @@
     <h2>*<%=type.upcase%>* <%= msg %></h2>
   </div>
 <% end %>
-<h3>LOG-IN BELOW</h3>
+<h2>LOG-IN BELOW</h2>
+<fieldset>
 <%= form_with(url: '/login') do |f| %>
     <%= f.label :email %>:
     <%= f.email_field :email %><br>
@@ -15,5 +16,5 @@
      <%= f.password_field :password %><br><br>
     <%= f.submit "Log in" %>
 <% end %>
-<br>
-<%= link_to "Sign up", '/users/new' %>
+</fieldset>
+

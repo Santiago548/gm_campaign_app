@@ -1,9 +1,12 @@
 <%= flash[:message] %>
 <%= display_header %>
+<fieldset>
 <%  # render partial: 'character', collection: @characters %>
    <% @characters.each do |c| %>
     Name:  <%=link_to(c.name,  "characters/#{c.id}") %><br />
     Level: <%= c.level %><br />
     Race: <%= c.race %><br />
     Class: <%= c.character_class %><br /><br />
+    <hr>
 <% end %>
+</fieldset>
