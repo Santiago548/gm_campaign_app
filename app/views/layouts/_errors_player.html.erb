@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GmCampaignApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+  </head>
+
+  <body>
+  <div class="center">
+    <fieldset>
+        <h2>AH AH AH, YOU AREN'T AUTHORIZED TO DO THAT.</h2> 
+        <b>YOU MUST BE LOGGED IN AS A PLAYER TO DO THAT</b><br>
+    <%= link_to("LOG IN", login_path) %><br>
+        <img src="/images/401_dice.png" alt="D401" style="width:200px;height:200px;float:center;">
+        <img src="/images/jurassic.gif" alt="error" style="width:150px;height:200px;float:center;">
+        <img src="/images/401_dice.png" alt="D401" style="width:200px;height:200px;float:center;">
+    <br>
+    </fieldset>
+    </div>
+  </body>
+</html>

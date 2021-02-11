@@ -4,12 +4,16 @@ class CharactersController < ApplicationController
         @users = User.all
         @campaigns = Campaign.all
         # possible working method, may need to refactor.
+    if logged_in? && current_user.game_master == false
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @character = @user.characters.build 
         else
             @character = Character.new
             @character.build_user
         end
+    else
+        render partial: 'layouts/errors_player'
+    end
     end 
 
     def show

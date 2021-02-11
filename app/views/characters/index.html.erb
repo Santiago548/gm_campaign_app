@@ -1,9 +1,8 @@
 <%= flash[:message] %>
 <%= display_header %><br>
 <fieldset>
-<%  # render partial: 'character', collection: @characters %>
    <% @characters.each do |c| %>
-    Name:  <%=link_to(c.name,  "characters/#{c.id}") %><br />
+    Name:  <%=link_to(c.name.capitalize,  "characters/#{c.id}") %><br />
     Level: <%= c.level %><br />
     Race: <%= c.race %><br />
     Class: <%= c.character_class %><br /><br />

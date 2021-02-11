@@ -1,7 +1,10 @@
 <% flash.each do |type, msg| %>
   <div>
-    <h2>*<%=type.upcase%>* <%= msg %></h2>
+  <fieldset>
+    <h3>*<%= msg %>*</h3>
   </div>
+  </fieldset>
+  <br>
 <% end %>
 <fieldset>
 <h2>LOG-IN BELOW</h2>

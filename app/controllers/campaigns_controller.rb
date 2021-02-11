@@ -1,6 +1,10 @@
 class CampaignsController < ApplicationController
     def new
-        @campaign = Campaign.new
+        if logged_in? && current_user.game_master
+            @campaign = Campaign.new
+        else
+            render partial: 'layouts/errors_gm'
+        end
     end 
 
     def show

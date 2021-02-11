@@ -27,7 +27,14 @@
     </fieldset>
 <% end %>
 
- <% if current_user && logged_in? %>
+ <% if logged_in? && current_user.id == @user.id  %>
+ <fieldset>
     <%= link_to "Edit Your Information", edit_user_path(@user) %>
     <%= button_to("Delete Account", user_path(@user), method: :delete) %>
+ </fieldset>
+ <% else%>
+ <br>
+ <fieldset>
+     <b>LOG IN TO EDIT/DELETE YOUR CHARACTER</b> <%= link_to("LOG IN", login_path) %>
+ </fieldset>
  <% end %>

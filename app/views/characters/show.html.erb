@@ -1,7 +1,7 @@
 <%= render @character %>
-
+<fieldset>
     <%= link_to "Edit Character", edit_character_path(@character.id) %>
     <%= button_to "delete", character_path(@character), method: :delete %>
-
+</fieldset>
 
     
