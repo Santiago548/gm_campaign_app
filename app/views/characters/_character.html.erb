@@ -1,13 +1,15 @@
 <br>
 <fieldset>
-<h2>PLAYER: <%= link_to(character.user.first_name.capitalize, character_path(character.user_id)) %> <%= link_to(character.user.last_name.capitalize, character_path(character.user_id)) %></h2>
-<h2>CAMPAIGN: <%= link_to(character.campaign.name.capitalize,  campaign_path(character.campaign_id)) %></h2>
+<hr>
+<h3>PLAYER: <%= link_to(character.user.first_name.capitalize, user_path(character.user_id)) %> <%= link_to(character.user.last_name.capitalize, user_path(character.user_id)) %></h3>
+<h3>CAMPAIGN: <%= link_to(character.campaign.name.capitalize,  campaign_path(character.campaign_id)) %></h3>
+<hr>
 </fieldset><br>
 <fieldset>
 <%= character_logo %>
-<hr>
+
 <h2>CHARACTER INFO:</h2>
-<hr>    
+    
     <b>Name:</b> <%=character.name.capitalize %><br />
     <b>Level:</b> <%= character.level %><br />
     <b>Race:</b> <%= character.race %><br />

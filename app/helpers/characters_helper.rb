@@ -156,9 +156,9 @@ module CharactersHelper
 
     def display_nested_header
         if params[:user_id]
-            tag.h2("Create a new Character for #{@user.first_name}")
+            tag.fieldset(tag.h2("Create a New Character for #{@user.first_name}"))
         else
-            tag.h2("Create a New Character")
+            tag.fieldset(tag.h2("Create a New Character"))
         end
     end
 end
