@@ -140,9 +140,9 @@ module CharactersHelper
 
     def display_header
         if @user
-            tag.h2("#{@user.first_name.capitalize}'s Characters")
+            tag.fieldset(tag.h2("#{@user.first_name.capitalize}'s Characters"))
         else
-            tag.h2("ALL CHARACTERS:")
+            tag.fieldset(tag.h2("CHARACTERS:"))
         end
     end
         

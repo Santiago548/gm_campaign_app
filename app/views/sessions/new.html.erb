@@ -3,8 +3,10 @@
     <h2>*<%=type.upcase%>* <%= msg %></h2>
   </div>
 <% end %>
-<h2>LOG-IN BELOW</h2>
 <fieldset>
+<h2>LOG-IN BELOW</h2>
+</fieldset><br>
+<fieldset><br>
 <%= form_with(url: '/login') do |f| %>
     <%= f.label :email %>:
     <%= f.email_field :email %><br>
