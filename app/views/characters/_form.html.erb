@@ -2,8 +2,6 @@
 <fieldset>
   <%= display_user_field(f) %>
   <hr>
-<%= "PLAYER:" %>
-<%= f.collection_select :user_id, User.player,:id,:username, prompt: true %><br />
   CAMPAIGN: <%= f.collection_select :campaign_id, Campaign.all,:id,:name, prompt: true %><br />
   <hr>
   NAME: <%= f.text_field :name %><br />

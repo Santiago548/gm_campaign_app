@@ -147,16 +147,16 @@ module CharactersHelper
     end
         
     def display_user_field(t)
-        if params{:user_id}
+        if params[:user_id]
             t.hidden_field :user_id
         else
-            render parital: 'user_select', locals: {f: t}
+            render partial: 'user_select', locals: {f: t}
         end
     end
 
     def display_nested_header
         if params[:user_id]
-            tag.fieldset(tag.h2("Create a New Character for #{@user.first_name}"))
+            tag.fieldset(tag.h2("Create a New Character for #{@user.first_name.capitalize}"))
         else
             tag.fieldset(tag.h2("Create a New Character"))
         end

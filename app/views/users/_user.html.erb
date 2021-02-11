@@ -1,4 +1,4 @@
-<br><br>
+<br>
 <fieldset>
     <% if @user.game_master == true %>
         <h2>Game Master Name: <%= @user.first_name %> <%= @user.last_name %></h2>
@@ -11,6 +11,7 @@
         <li><h3>Phone Number: <%= @user.phone_number %></h3></li>
     </ul>
 </fieldset><br>
+
 <% if @user.game_master == false %>
 <fieldset>
 <h2>PLAYER CHARACTERS:</h2>
@@ -26,15 +27,15 @@
     <% end %>
     </fieldset>
 <% end %>
-
+<br>
  <% if logged_in? && current_user.id == @user.id  %>
  <fieldset>
-    <%= link_to "Edit Your Information", edit_user_path(@user) %>
+    <button><%= link_to "Edit Your Information", edit_user_path(@user) %></button>
     <%= button_to("Delete Account", user_path(@user), method: :delete) %>
  </fieldset>
  <% else%>
  <br>
  <fieldset>
-     <b>LOG IN TO EDIT/DELETE YOUR CHARACTER</b> <%= link_to("LOG IN", login_path) %>
+    <button><%= link_to("LOG IN", login_path) %></button> <b>LOG IN TO EDIT/DELETE YOUR USER</b> 
  </fieldset>
  <% end %>

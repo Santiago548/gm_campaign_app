@@ -27,14 +27,16 @@ Rails.application.routes.draw do
  post '/campaigns/new', to: 'campaigns#create'
  delete '/campaigns/:id', to: 'campaigns#destroy'
   
- resources :campaigns
- 
+
  resources :characters, only: [:index, :new, :show, :edit, :create]
 
  resources :users do
   resources :characters
  end
 
+ resources :campaigns do
+  resources :characters
+end
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

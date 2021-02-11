@@ -1,6 +1,7 @@
 <br>
 <fieldset>
 <h2>CAMPAIGN NAME: <%= @campaign.name.capitalize %></h2>
+
 </fieldset><br>
 <fieldset>
 <h2>GAME-MASTER INFO:</h2>
@@ -40,6 +41,8 @@
 </fieldset><br>
 <% # need to make ability to delete campaign if GM %>
 <% if logged_in? && current_user.game_master == true %>
-    <%= link_to "Edit Campaign", edit_campaign_path(@campaign) %>
-    <%= button_to "Delete Campaign", campaign_path(@campaign), method: :delete %>
- <%  end %>
+    <fieldset>
+        <button><%= link_to "Edit Campaign", edit_campaign_path(@campaign) %></button>
+        <%= button_to "Delete Campaign", campaign_path(@campaign), method: :delete %>
+    </fieldset>
+ <% end %>
