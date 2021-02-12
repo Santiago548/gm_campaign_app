@@ -1,14 +1,13 @@
-<br>
+<hr>
 <fieldset>
-    <hr>
     <h3>PLAYER: <%= link_to(character.user.first_name.capitalize, user_path(character.user_id)) %> <%= link_to(character.user.last_name.capitalize, user_path(character.user_id)) %></h3>
     <h3>CAMPAIGN: <%= link_to(character.campaign.name.capitalize,  campaign_path(character.campaign_id)) %></h3>
-    <hr>
-</fieldset><br>
+</fieldset>
+<hr>
 <fieldset>
     <fieldset>
     <%= character_logo %>
-    <legend>CHARACTER INFO:</legend>
+    <legend><b>CHARACTER INFO:/</b></legend>
         <b>Name:</b> <%=character.name.capitalize %><br />
         <b>Level:</b> <%= character.level %><br />
         <b>Race:</b> <%= character.race %><br />
@@ -16,9 +15,9 @@
         <b>Armor Class:</b> <%= character.armor_class %><br />
         <b>Speed:</b> <%= character.speed %>ft<br />
     </fieldset>
-    <hr><hr>
+    <br>
     <fieldset>
-    <legend>SKILLS:</legend>
+    <legend><b>SKILLS:</b></legend>
         <b>Strength:</b>     +<%= character.strength %> (<%= skill_strength %>)<br />
         <b>Dexterity:</b>    +<%= character.dexterity %> (<%= skill_dexterity %>)<br />
         <b>Constitution:</b> +<%= character.constitution %> (<%= skill_constitution %>)<br />
@@ -26,12 +25,13 @@
         <b>Wisdom:</b>       +<%= character.wisdom %> (<%= skill_wisdom %>)<br />
         <b>Charisma:</b>     +<%= character.charisma %> (<%= skill_charisma %>)<br />
      </fieldset>
-     <hr><hr>
+     <br>
      <fieldset>
-    <legend>PROFICIENCIES::</legend>
+    <legend><b>PROFICIENCIES:</b></legend>
         <b>Languages:</b> <%= character.language_1 %>, <%= character.language_2 %><br />
         <b>Weapon Proficiencies:</b> <%= character.weapon_1 %>, <%= character.weapon_1 %><br />
         <b>Armor Proficiencies:</b> <%= character.armor_1 %><br />
         <b>Skill Proficiencies:</b> <%= character.skill_1 %>, <%= character.skill_2 %><br />
     </fieldset>
-</fieldset><br>
+</fieldset>
+<hr>

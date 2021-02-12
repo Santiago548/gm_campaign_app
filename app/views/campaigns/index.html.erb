@@ -1,9 +1,10 @@
+<hr>
 <fieldset>
 <h2>CAMPAIGNS:</h2>
-</fieldset><br>
-
+</fieldset>
+<hr>
 <% @campaigns.each do |c| %>
-    <hr>
+   <br>
     <fieldset>
     <legend>
     <b>Campaign Name:</b> <%=link_to(c.name,  "campaigns/#{c.id}") %><br>
@@ -18,5 +19,5 @@
     <% end %>
     </fieldset>
 <% end %>
-<hr>
+
 

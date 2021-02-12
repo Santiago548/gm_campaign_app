@@ -1,8 +1,9 @@
 <%= flash[:message] %>
-<%= display_header %><br>
-
+<hr>
+<%= display_header %>
+<hr>
     <% @characters.each do |c| %>
-    <hr>
+    <br>
     <fieldset>
         <legend><b>Name:</b>  <%=link_to(c.name.capitalize,  "characters/#{c.id}") %><br /></legend>
         <b>Level:</b> <%= c.level %><br />

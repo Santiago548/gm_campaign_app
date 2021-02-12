@@ -1,7 +1,9 @@
+<hr>
 <fieldset>
-    <h2><%= @user.first_name %>'s Profile</h2>
-</fieldset><br>
-
+    <h2><%= @user.first_name.capitalize %>'s Profile</h2>
+</fieldset>
+<hr>
+<fieldset>
 <fieldset>
     <legend>
         <b>PLAYER INFO:</b>
@@ -16,7 +18,7 @@
         <li><b>Email: <%= @user.email %></b></li>
         <li><b>Phone Number: <%= @user.phone_number %></b></li>
 </fieldset>
-<hr><hr>
+<br>
 <% if @user.game_master == false %>
 <fieldset>
 <legend>
@@ -34,15 +36,14 @@
     <% end %>
     </fieldset>
 <% end %>
-<br>
-
+</fieldset>
+<hr>
  <% if logged_in? && current_user.id == @user.id  %>
  <fieldset>
     <button><%= link_to "Edit Your Information", edit_user_path(@user) %></button>
     <%= button_to("Delete Account", user_path(@user), method: :delete) %>
  </fieldset>
  <% else%>
- <br>
  <fieldset>
     <button><%= link_to("LOG IN", login_path) %></button> <b>LOG IN TO EDIT/DELETE YOUR USER</b> 
  </fieldset>

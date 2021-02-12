@@ -70,20 +70,28 @@ legend {
 }
 
 hr {
-  border-top: 2px solid rgb(255, 255, 255);
-  border-bottom: 2px solid rgb(255, 255, 255);
+  border-top: 2px solid rgb(0, 0, 0);
   line-height: 36px;
 }
 
 body {
-  background-color: #79230ef6;
+  background-color: #add8e6;
   color: #333;
   font-family: Sans-Serif;
   line-height: 18px;
 }
 
-
-
 .center {
   text-align: center;
+}
+
+.branding {
+  clear: both;
+  color: rgb(0, 0, 0);
+}
+
+footer.branding {
+  border-top: 2px solid rgb(0, 0, 0);
+  margin-top: 10px;
+  padding-top: 10px;
 }
