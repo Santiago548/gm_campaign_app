@@ -1,8 +1,8 @@
 <%= render @character %>
 <fieldset>
     <% if logged_in? && current_user.id == @character.user_id  %>
-        <%= link_to "Edit Character", edit_character_path(@character.id) %>
-        <%= button_to "delete", character_path(@character), method: :delete %>
+        <button><%= link_to "Edit Character", edit_character_path(@character.id) %></button>
+        <%= button_to "DELETE", character_path(@character), method: :delete %>
     <% else %>
         <button><%= link_to("LOG IN", login_path) %></button> <b>TO EDIT/DELETE YOUR CHARACTER</b> 
     <% end %>

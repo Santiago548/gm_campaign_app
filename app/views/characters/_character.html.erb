@@ -1,31 +1,37 @@
 <br>
 <fieldset>
-<hr>
-<h3>PLAYER: <%= link_to(character.user.first_name.capitalize, user_path(character.user_id)) %> <%= link_to(character.user.last_name.capitalize, user_path(character.user_id)) %></h3>
-<h3>CAMPAIGN: <%= link_to(character.campaign.name.capitalize,  campaign_path(character.campaign_id)) %></h3>
-<hr>
+    <hr>
+    <h3>PLAYER: <%= link_to(character.user.first_name.capitalize, user_path(character.user_id)) %> <%= link_to(character.user.last_name.capitalize, user_path(character.user_id)) %></h3>
+    <h3>CAMPAIGN: <%= link_to(character.campaign.name.capitalize,  campaign_path(character.campaign_id)) %></h3>
+    <hr>
 </fieldset><br>
 <fieldset>
-<%= character_logo %>
-
-<h2>CHARACTER INFO:</h2>
-    
-    <b>Name:</b> <%=character.name.capitalize %><br />
-    <b>Level:</b> <%= character.level %><br />
-    <b>Race:</b> <%= character.race %><br />
-    <b>Class:</b> <%= character.character_class %><br />
-    <b>Armor Class:</b> <%= character.armor_class %><br />
-    <b>Speed:</b> <%= character.speed %>ft<br />
-     <hr>
-    <b>Strength:</b> +<%= character.strength %><br />
-    <b>Dexterity:</b> +<%= character.dexterity %><br />
-    <b>Constitution:</b> +<%= character.constitution %><br />
-    <b>Intelligence:</b> +<%= character.intelligence %><br />
-    <b>Wisdom:</b> +<%= character.wisdom %><br />
-    <b>Charisma:</b> +<%= character.charisma %><br />
-     <hr>
-    <b>Languages:</b> <%= character.language_1 %>, <%= character.language_2 %><br />
-    <b>Weapon Proficiencies:</b> <%= character.weapon_1 %>, <%= character.weapon_1 %><br />
-    <b>Armor Proficiencies:</b> <%= character.armor_1 %><br />
-    <b>Skill Proficiencies:</b> <%= character.skill_1 %>, <%= character.skill_2 %><br />
+    <fieldset>
+    <%= character_logo %>
+    <legend>CHARACTER INFO:</legend>
+        <b>Name:</b> <%=character.name.capitalize %><br />
+        <b>Level:</b> <%= character.level %><br />
+        <b>Race:</b> <%= character.race %><br />
+        <b>Class:</b> <%= character.character_class %><br />
+        <b>Armor Class:</b> <%= character.armor_class %><br />
+        <b>Speed:</b> <%= character.speed %>ft<br />
+    </fieldset>
+    <hr><hr>
+    <fieldset>
+    <legend>SKILLS:</legend>
+        <b>Strength:</b>     +<%= character.strength %> (<%= skill_strength %>)<br />
+        <b>Dexterity:</b>    +<%= character.dexterity %> (<%= skill_dexterity %>)<br />
+        <b>Constitution:</b> +<%= character.constitution %> (<%= skill_constitution %>)<br />
+        <b>Intelligence:</b> +<%= character.intelligence %> (<%= skill_intelligence %>)<br />
+        <b>Wisdom:</b>       +<%= character.wisdom %> (<%= skill_wisdom %>)<br />
+        <b>Charisma:</b>     +<%= character.charisma %> (<%= skill_charisma %>)<br />
+     </fieldset>
+     <hr><hr>
+     <fieldset>
+    <legend>PROFICIENCIES::</legend>
+        <b>Languages:</b> <%= character.language_1 %>, <%= character.language_2 %><br />
+        <b>Weapon Proficiencies:</b> <%= character.weapon_1 %>, <%= character.weapon_1 %><br />
+        <b>Armor Proficiencies:</b> <%= character.armor_1 %><br />
+        <b>Skill Proficiencies:</b> <%= character.skill_1 %>, <%= character.skill_2 %><br />
+    </fieldset>
 </fieldset><br>

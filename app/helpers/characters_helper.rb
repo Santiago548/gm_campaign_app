@@ -127,8 +127,8 @@ module CharactersHelper
                 image_tag "/images/cleric.png", style: 'width:100px;height:100px;float:right;'
             when "Rogue"
                 image_tag "/images/rouge.png", style: 'width:100px;height:100px;float:right;'
-            when "Sorcerer"
-                image_tag "/images/sorcerer.png", style: 'width:100px;height:100px;float:right;'
+            when ",cerer"
+                image_tag "/images/,cerer.png", style: 'width:100px;height:100px;float:right;'
             when "Warlock"
                 image_tag "/images/warlock.png", style: 'width:100px;height:100px;float:right;'
             when "Wizard"
@@ -164,11 +164,117 @@ module CharactersHelper
 
     def display_nested_header
         if params[:user_id]
-            tag.fieldset(tag.h2("Create a New Character for #{@user.first_name.capitalize}"))
+            tag.fieldset(tag.h2("Create a New Character , #{@user.first_name.capitalize}"))
         elsif params[:campaign_id]
-            tag.fieldset(tag.h2("Create a New Character for the #{@campaign.name.capitalize} Campaign"))
+            tag.fieldset(tag.h2("Create a New Character , the #{@campaign.name.capitalize} Campaign"))
         else
             tag.fieldset(tag.h2("Create a New Character"))
         end
     end
+
+    
+
+    def skill_strength
+        case @character.strength
+        when @character.strength = 1
+            "12"
+        when @character.strength = 2
+            "14"
+        when @character.strength = 3
+            "16"
+        when @character.strength = 4
+            "18"
+        when @character.strength = 5
+            "20"
+        when @character.strength = 6
+            "22"
+        end
+    end
+
+    def skill_dexterity
+        case @character.dexterity
+        when @character.dexterity = 1
+            "12"
+        when @character.dexterity = 2
+            "14"
+        when @character.dexterity = 3
+            "16"
+        when @character.dexterity = 4
+            "18"
+        when @character.dexterity = 5
+            "20"
+        when  @character.dexterity= 6
+            "22"
+        end
+    end
+
+    def skill_constitution
+        case@character.constitution
+        when @character.constitution = 1
+            "12"
+        when @character.constitution = 2
+            "14"
+        when @character.constitution = 3
+            "16"
+        when @character.constitution = 4
+            "18"
+        when @character.constitution = 5
+            "20"
+        when @character.constitution = 6
+            "22"
+        end
+    end
+
+    def skill_intelligence
+        case@character.intelligence
+        when @character.intelligence = 1
+            "12"
+        when @character.intelligence = 2
+            "14"
+        when @character.intelligence = 3
+            "16"
+        when @character.intelligence = 4
+            "18"
+        when @character.intelligence = 5
+            "20"
+        when @character.intelligence = 6
+            "22"
+        end
+    end
+
+    def skill_wisdom
+        case@character.wisdom
+        when @character.wisdom = 1
+            "12"
+        when @character.wisdom = 2
+            "14"
+        when @character.wisdom = 3
+            "16"
+        when @character.wisdom = 4
+            "18"
+        when @character.wisdom = 5
+            "20"
+        when @character.wisdom = 6
+            "22"
+        end
+    end
+
+    def skill_charisma
+        case@character.charisma
+        when @character.charisma = 1
+            "12"
+        when @character.charisma = 2
+            "14"
+        when @character.charisma = 3
+            "16"
+        when @character.charisma = 4
+            "18"
+        when @character.charisma = 5
+            "20"
+        when @character.charisma = 6
+            "22"
+        end
+    end
+
+    
 end

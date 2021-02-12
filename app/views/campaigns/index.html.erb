@@ -3,7 +3,7 @@
 </fieldset><br>
 <fieldset>
 <% @campaigns.each do |c| %>
-    <b>Campaign Name:</b> <%=link_to(c.name.capitalize,  "campaigns/#{c.id}") %><br>
+    <b>Campaign Name:</b> <%=link_to(c.name,  "campaigns/#{c.id}") %><br>
     <b>GM Name:</b> <%= c.gm_name.capitalize %><br>
     <b>Next Session:</b> <%= c.next_session.strftime( "%a, %B, %e") %><br>
     <b>Session Active:</b> 

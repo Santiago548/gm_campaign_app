@@ -15,15 +15,16 @@
 <% if @user.game_master == false %>
 <fieldset>
 <h2>PLAYER CHARACTERS:</h2>
-    <% if @characters.exists?%>
+    
 <ul>
     <% @characters.each do |c| %>
             <% if c.user_id == @user.id %>
                 <li><h3><%=link_to(c.name.capitalize,  character_path(c.id)) %> The <%= c.race %> <%= c.character_class %></h3></li>
             <% end %>
         <% end %>
-    <% else %>
-        <%= "This Player has no charcaters" %>
+    <% if !@user.characters.exists?%>
+        <h1><%= "No Characters" %></h1><br>
+        <button><%= link_to("Create A Character", new_user_character_path(current_user.id)) %></button>
     <% end %>
     </fieldset>
 <% end %>
@@ -39,3 +40,4 @@
     <button><%= link_to("LOG IN", login_path) %></button> <b>LOG IN TO EDIT/DELETE YOUR USER</b> 
  </fieldset>
  <% end %>
+ 

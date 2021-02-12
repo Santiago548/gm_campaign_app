@@ -1,17 +1,20 @@
 <br>
 <fieldset>
-<h2>CAMPAIGN NAME: <%= @campaign.name.capitalize %></h2>
+<h2>CAMPAIGN NAME: <%= @campaign.name %></h2>
 
 </fieldset><br>
 <fieldset>
-<h2>GAME-MASTER INFO:</h2>
+<fieldset>
+    <legend><b>GAME-MASTER INFO:</b></legend>
 <ul>
     <li><h4>GM Name: <%= @campaign.gm_name.capitalize %></h4></li>
     <li><h4>GM Phone Number: <%= @campaign.gm_phone_number %></h4></li>
     <li><h4>Gm Email: <%= @campaign.gm_email %></h4></li>
 </ul>
-
-<h2>CAMPAIGN INFO:</h2>
+</fieldset>
+<hr><hr>
+<fieldset>
+<legend><b>CAMPAIGN INFO:</b></legend>
 <ul>
     <li><h4>Start Date: <%= @campaign.start_date.strftime( "%a, %B, %e") %></h4></li>
     <li><h4>End Date: <%= @campaign.end_date.strftime( "%a, %B, %e") %></h4></li>
@@ -24,23 +27,25 @@
             <% end %></h4></li>
     <li><h4>Quest Log: <%= @campaign.quest_log %></h4></li>
 </ul>
-
-<h2>CAMPAIGN CHARACTERS:</h2>
-    <% if @characters.exists?%>
-<ul>
-    <% @characters.each do |c| %>
-            <% if c.campaign_id == @campaign.id %>
-                <li><h4><%=link_to(c.name.capitalize,  character_path(c.id)) %> The <%= c.race %> <%= c.character_class %></h4></li>
-            <% end %>
-        <% end %>
-    <% else %>
-        <%= "No charcaters in this campaign" %>
-    <% end %>    
-</ul>
-<hr>
-</fieldset><br>
+</fieldset>
+<hr><hr>
 <fieldset>
-    <%= link_to("Create a Character for a Campaign", new_campaign_character_path(@campaign.id)) %>
+<legend><b>CAMPAIGN CHARACTERS:</b></legend>
+
+    <% @characters.each do |c| %>
+        <% if c.campaign_id == @campaign.id %>
+            <ul>
+            <li><h4><%=link_to(c.name.capitalize,  character_path(c.id)) %> The <%= c.race %> <%= c.character_class %></h4></li>
+            </ul>
+        <% end %>
+    <% end %>
+    
+    <% if !@campaign.characters.exists? %>
+        <h2>No Characters On This Quest</h2>
+    <% end%>    
+
+<button><%= link_to("Create a Character For The #{@campaign.name} Campaign", new_campaign_character_path(@campaign.id)) %></button>
+</fieldset><br>
 </fieldset>
 <% # need to make ability to delete campaign if GM %>
 <% if logged_in? && current_user.game_master == true %>
