@@ -135,7 +135,7 @@ module CharactersHelper
                 image_tag "/images/wizard.png", style: 'width:100px;height:100px;float:right;'
             else
                 "nope"
-            end
+        end
     end
 
     def display_header

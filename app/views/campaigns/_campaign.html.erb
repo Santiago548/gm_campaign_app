@@ -1,9 +1,9 @@
 <br>
 <fieldset>
 <h2>CAMPAIGN NAME: <%= @campaign.name %></h2>
-
 </fieldset><br>
-<fieldset>
+
+
 <fieldset>
     <legend><b>GAME-MASTER INFO:</b></legend>
 <ul>
@@ -46,7 +46,7 @@
 
 <button><%= link_to("Create a Character For The #{@campaign.name} Campaign", new_campaign_character_path(@campaign.id)) %></button>
 </fieldset><br>
-</fieldset>
+
 <% # need to make ability to delete campaign if GM %>
 <% if logged_in? && current_user.game_master == true %>
     <fieldset>

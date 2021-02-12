@@ -1,25 +1,31 @@
-
 <fieldset>
-    <% if @user.game_master == true %>
-        <h2>Game Master Name: <%= @user.first_name %> <%= @user.last_name %></h2>
-    <% else %>
-        <h2>Player Name: <%= @user.first_name %> <%= @user.last_name %></h2>
-    <% end %>
-    <ul>
-        <li><h3>Username: <%= @user.username %></h3></li>
-        <li><h3>Email: <%= @user.email %></h3></li>
-        <li><h3>Phone Number: <%= @user.phone_number %></h3></li>
-    </ul>
+    <h2><%= @user.first_name %>'s Profile</h2>
 </fieldset><br>
 
+<fieldset>
+    <legend>
+        <b>PLAYER INFO:</b>
+    </legend>
+    <% if @user.game_master == true %>
+        <li><b>Game Master Name: <%= @user.first_name %> <%= @user.last_name %></b></li>
+    <% else %>
+        <li><b>Player Name: <%= @user.first_name %> <%= @user.last_name %></b></li>
+    <% end %>
+    
+        <li><b>Username: <%= @user.username %></b></li>
+        <li><b>Email: <%= @user.email %></b></li>
+        <li><b>Phone Number: <%= @user.phone_number %></b></li>
+</fieldset>
+<hr><hr>
 <% if @user.game_master == false %>
 <fieldset>
-<h2>PLAYER CHARACTERS:</h2>
-    
-<ul>
+<legend>
+    <b>PLAYER CHARACTERS:</b>
+</legend>
+
     <% @characters.each do |c| %>
             <% if c.user_id == @user.id %>
-                <li><h3><%=link_to(c.name.capitalize,  character_path(c.id)) %> The <%= c.race %> <%= c.character_class %></h3></li>
+                <li><b> <%=link_to(c.name.capitalize,  character_path(c.id)) %> The <%= c.race %> <%= c.character_class %></b></li>
             <% end %>
         <% end %>
     <% if !@user.characters.exists?%>
@@ -28,6 +34,7 @@
     <% end %>
     </fieldset>
 <% end %>
+<br>
 
  <% if logged_in? && current_user.id == @user.id  %>
  <fieldset>
@@ -40,4 +47,5 @@
     <button><%= link_to("LOG IN", login_path) %></button> <b>LOG IN TO EDIT/DELETE YOUR USER</b> 
  </fieldset>
  <% end %>
+ 
  

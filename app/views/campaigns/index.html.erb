@@ -1,9 +1,13 @@
 <fieldset>
 <h2>CAMPAIGNS:</h2>
 </fieldset><br>
-<fieldset>
+
 <% @campaigns.each do |c| %>
+    <hr>
+    <fieldset>
+    <legend>
     <b>Campaign Name:</b> <%=link_to(c.name,  "campaigns/#{c.id}") %><br>
+    </legend>
     <b>GM Name:</b> <%= c.gm_name.capitalize %><br>
     <b>Next Session:</b> <%= c.next_session.strftime( "%a, %B, %e") %><br>
     <b>Session Active:</b> 
@@ -11,6 +15,8 @@
     <%= "the group is out questing" %>
     <% else %>
     <%= "The group is in the tavern awaiting thier next quest." %>
-    <% end %><br><hr>
+    <% end %>
+    </fieldset>
 <% end %>
-</fieldset>
+<hr>
+
