@@ -1,0 +1,3 @@
+<hr>
+<b><%= "ASSOCIATE A CAMPAIGN:" %></b>
+<%= f.collection_select :campaign_id, Campaign.all,:id,:name, prompt: true %><br />

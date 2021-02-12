@@ -1,13 +1,14 @@
 <%= user_header %><br>
 <fieldset>
-<% @users.each do |u| %>
-    <% if u.game_master == true %>
-        <b><%= "GAME MASTER" %></b>
-    <% else %>
-         <b><%= "PLAYER" %></b>
-    <% end %><br>
-    Username: <%=link_to(u.username,  "users/#{u.id}") %><br />
-    Name: <%= u.first_name %> <%= u.last_name %><br />
-    Email: <%= u.email %><br /><br />
-<% end %>
+    <hr><hr>
+    <% @users.each do |u| %>
+        <% if u.game_master == true %>
+            <b><%= "GAME MASTER" %></b>
+        <% else %>
+            <b><%= "PLAYER" %></b>
+        <% end %><br>
+            Username: <%=link_to(u.username,  "users/#{u.id}") %><br />
+            Name: <%= u.first_name %> <%= u.last_name %><br />
+            Email: <%= u.email %><br /><hr><hr>
+    <% end %>
 </fieldset>

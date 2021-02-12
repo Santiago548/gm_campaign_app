@@ -1,11 +1,12 @@
 <%= flash[:message] %>
 <%= display_header %><br>
 <fieldset>
-   <% @characters.each do |c| %>
-    Name:  <%=link_to(c.name.capitalize,  "characters/#{c.id}") %><br />
-    Level: <%= c.level %><br />
-    Race: <%= c.race %><br />
-    Class: <%= c.character_class %><br /><br />
-    <hr>
+    <hr><hr>
+    <% @characters.each do |c| %>
+        <b>Name:</b>  <%=link_to(c.name.capitalize,  "characters/#{c.id}") %><br />
+        <b>Level:</b> <%= c.level %><br />
+        <b>Race:</b> <%= c.race %><br />
+        <b>Class:</b> <%= c.character_class %><br />
+    <hr><hr>
 <% end %>
 </fieldset>

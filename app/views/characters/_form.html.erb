@@ -2,22 +2,21 @@
 <fieldset>
   <%= display_user_field(f) %>
   <%= display_campaign_field(f) %>
-  <hr>
-  <hr>
-  NAME: <%= f.text_field :name %><br />
+  <hr><hr>
+  <b>NAME: <%= f.text_field :name %><br />
   LEVEL: <%= f.select :level, (1..20) %><br />
   RACE: <%= f.select :race, (character_race) %><br />
   CLASS: <%= f.select :character_class, (character_classes) %><br />
   ARMOR CLASS: <%= f.select :armor_class, (10..22)  %><br />
   SPEED: <%= f.select :speed, ([5,10,15,20,25,30,35,40,45,50]) %> ft<br />
-  <hr>
+  <hr><hr>
   STRENGTH: +<%= f.select :strength, (1..6) %><br />
   DEXTERITY: +<%= f.select :dexterity, (1..6) %><br />
   CONSTITUTION: +<%= f.select :constitution, (1..6) %><br />
   INTELLIGENCE: +<%= f.select :intelligence, (1..6) %><br />
   WISDOM: +<%= f.select :wisdom, (1..6) %><br />
   CHARISMA: +<%= f.select :charisma, (1..6) %><br />
-  <hr>
+  <hr><hr>
   LANGUAGES: <%= f.select :language_1, (character_languages) %> 
              <%= f.select :language_2, (character_languages) %><br />
                
@@ -28,8 +27,7 @@
     
   SKILLS:<%= f.select :skill_1, (character_skills) %>
          <%= f.select :skill_2, (character_skills) %><br />
-     
-    
+         <hr><hr></b>
   <%= f.submit %>
   </fieldset>
 <% end %>

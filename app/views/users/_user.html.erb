@@ -1,4 +1,4 @@
-<br>
+
 <fieldset>
     <% if @user.game_master == true %>
         <h2>Game Master Name: <%= @user.first_name %> <%= @user.last_name %></h2>
@@ -27,7 +27,7 @@
     <% end %>
     </fieldset>
 <% end %>
-<br>
+
  <% if logged_in? && current_user.id == @user.id  %>
  <fieldset>
     <button><%= link_to "Edit Your Information", edit_user_path(@user) %></button>
