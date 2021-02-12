@@ -39,6 +39,9 @@
 </ul>
 <hr>
 </fieldset><br>
+<fieldset>
+    <%= link_to("Create a Character for a Campaign", new_campaign_character_path(@campaign.id)) %>
+</fieldset>
 <% # need to make ability to delete campaign if GM %>
 <% if logged_in? && current_user.game_master == true %>
     <fieldset>

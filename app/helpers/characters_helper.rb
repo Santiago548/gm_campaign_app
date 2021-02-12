@@ -145,6 +145,14 @@ module CharactersHelper
             tag.fieldset(tag.h2("CHARACTERS:"))
         end
     end
+
+    def display_campaign_field(t)
+        if params[:campaign_id]
+            t.hidden_field :campaign_id
+        else
+            render partial: 'campaign_select', locals: {f: t}
+        end
+    end
         
     def display_user_field(t)
         if params[:user_id]
@@ -157,6 +165,8 @@ module CharactersHelper
     def display_nested_header
         if params[:user_id]
             tag.fieldset(tag.h2("Create a New Character for #{@user.first_name.capitalize}"))
+        elsif params[:campaign_id]
+            tag.fieldset(tag.h2("Create a New Character for the #{@campaign.name.capitalize} Campaign"))
         else
             tag.fieldset(tag.h2("Create a New Character"))
         end

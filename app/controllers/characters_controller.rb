@@ -7,6 +7,8 @@ class CharactersController < ApplicationController
     # if logged_in? && current_user.game_master == false
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @character = @user.characters.build 
+        elsif params[:campaign_id] && @campaign = Campaign.find_by_id(params[:campaign_id])
+            @character = @campaign.characters.build
         else
             @character = Character.new
             @character.build_user
