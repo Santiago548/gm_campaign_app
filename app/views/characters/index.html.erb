@@ -2,7 +2,7 @@
 <hr>
 <%= display_header %>
 <hr>
-    <% @characters.each do |c| %>
+    <% @characters.character_order_alphabet.each do |c| %>
     <br>
     <fieldset>
         <legend><b>Name:</b>  <%=link_to(c.name.capitalize,  "characters/#{c.id}") %><br /></legend>

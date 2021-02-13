@@ -1,14 +1,17 @@
 <% flash.each do |type, msg| %>
   <div>
+  <hr>
   <fieldset>
     <h3>*<%= msg %>*</h3>
   </div>
   </fieldset>
-  <br>
+ 
 <% end %>
+<hr>
 <fieldset>
 <h2>LOG-IN BELOW</h2>
-</fieldset><br>
+</fieldset>
+<hr>
 <fieldset><br>
 <%= form_with(url: '/login') do |f| %>
     <%= f.label :email %>:
