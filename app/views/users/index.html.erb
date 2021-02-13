@@ -1,6 +1,7 @@
 <hr>
 <%= user_header %>
 <hr>
+<fieldset>
     <% @users.each do |u| %>
      <br>
     <fieldset>
@@ -16,3 +17,4 @@
             Email: <%= u.email %><br />
         </fieldset>
     <% end %>
+</fieldset>
