@@ -16,7 +16,6 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect_to user_path(@user)
         else
-          @errors = @user.errors.full_messages
           render new_user_path
         end
     end
@@ -32,8 +31,12 @@ class UsersController < ApplicationController
     
     def update
         user = User.find_by(id: params[:id])
+        if logged_in? && current_user.id == user.id
         user.update(user_params)
         redirect_to user_path(user)
+        else
+            render partial: 'layouts/errors_player'
+        end
     end
 
     def destroy
@@ -42,7 +45,7 @@ class UsersController < ApplicationController
             @user.destroy
             redirect_to '/users'
         else
-            redirect_to '/login'
+            render partial: 'layouts/errors_player'
         end
     end
 

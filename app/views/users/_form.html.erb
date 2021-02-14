@@ -3,6 +3,7 @@
 <h2> SIGN UP BELOW:</h2>
 </fieldset>
 <hr>
+<%= render partial: 'layouts/errors', locals: {object: @user} %>
 <fieldset>
 <%= form_for @user do |f| %>
   Username: <%= f.text_field :username%><br />

@@ -43,7 +43,7 @@
         <h2>No Characters On This Quest</h2>
     <% end%>    
 
-<button><%= link_to("Create a Character For The #{@campaign.name} Campaign", new_campaign_character_path(@campaign.id)) %></button>
+<button><%= link_to("Create a Character", new_campaign_character_path(@campaign.id)) %></button> For The <%= "#{@campaign.name}" %> Campaign
 </fieldset><br>
 
 <% # need to make ability to delete campaign if GM %>

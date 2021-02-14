@@ -19,13 +19,19 @@
   <div class="center">
     <fieldset>
         <h2>AH AH AH, YOU AREN'T AUTHORIZED TO DO THAT.</h2> 
-        <b>YOU MUST BE LOGGED IN AS A PLAYER TO DO THAT</b><br>
-    <%= link_to("LOG IN", login_path) %><br>
+        <b>YOU MUST BE LOGGED IN TO THIS PLAYER TO DO THAT</b><br>
+    <button><%= link_to("LOG IN", login_path) %></button><br>
+        <hr><hr>
         <img src="/images/401_dice.png" alt="D401" style="width:200px;height:200px;float:center;">
         <img src="/images/jurassic.gif" alt="error" style="width:150px;height:200px;float:center;">
         <img src="/images/401_dice.png" alt="D401" style="width:200px;height:200px;float:center;">
-    <br>
+    <hr><hr>
     </fieldset>
     </div>
   </body>
+  <footer class="branding">
+        <small><strong>&copy; 2021 CampaignMangaerApp</strong></small>
+      </footer>
+    </div>
 </html>
+

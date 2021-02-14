@@ -1,0 +1,14 @@
+<% if object.errors.any? %>
+  <div id="error_explanation">
+  <fieldset>
+    <h2><%= pluralize(object.errors.count, "error") %> prohibited this from being saved:</h2>
+
+    <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+</fieldset>
+<hr>
+  </div>
+<% end %>

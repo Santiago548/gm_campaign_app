@@ -3,8 +3,6 @@ class CharactersController < ApplicationController
     def new
         @users = User.all
         @campaigns = Campaign.all
-        # possible working method, may need to refactor.
-    # if logged_in? && current_user.game_master == false
         if params[:user_id] && @user = User.find_by_id(params[:user_id])
             @character = @user.characters.build 
         elsif params[:campaign_id] && @campaign = Campaign.find_by_id(params[:campaign_id])
@@ -13,9 +11,6 @@ class CharactersController < ApplicationController
             @character = Character.new
             @character.build_user
         end
-    #else
-        #render partial: 'layouts/errors_player'
-    #end
     end 
 
     def show
@@ -35,7 +30,6 @@ class CharactersController < ApplicationController
         if @character.save
             redirect_to character_path(@character)
         else
-            @errors = @character.errors.full_messages
             render new_character_path
         end
     end 
@@ -46,18 +40,22 @@ class CharactersController < ApplicationController
 
     def update
         @character = Character.find_by(id: params[:id])
-        # if logged_in? && current_user.id == character.user_id
-        @character.update(character_params)
-        redirect_to character_path(@character)
-        # end
+        if logged_in? && current_user.id == character.user_id
+            @character.update(character_params)
+            redirect_to character_path(@character)
+        else
+            render partial: 'layouts/errors_player'
+        end
     end 
 
     def destroy
         character = Character.find_by(id: params[:id])
-        # if current_user && current_user.id == character.user_id
-        character.destroy
-        redirect_to characters_path
-        # end 
+        if logged_in? && current_user.id == character.user_id
+            character.destroy
+            redirect_to characters_path
+        else
+            render partial: 'layouts/errors_player'
+        end 
     end 
 
     private
