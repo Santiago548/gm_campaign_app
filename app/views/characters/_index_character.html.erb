@@ -1,0 +1,40 @@
+<fieldset>
+    <% @characters.character_order_level.each do |c| %>
+    <br>
+    <fieldset>
+  <% case c.character_class 
+    when "Ranger"%>
+    <img src="/images/ranger.png" alt="Ranger" style="width:50px;height:50px;float:right;">
+    <% when "Artificer" %>
+		<img src="/images/artificer.png" alt="Artificer" style="width:50px;height:50px;float:right;">
+    <% when "Barbarian" %>
+		<img src="/images/barbarian.png" alt="Barbarian" style="width:50px;height:50px;float:right;">
+    <% when "Bard" %>
+		<img src="/images/bard.png" alt="Bard" style="width:50px;height:50px;float:right;">
+    <% when "Druid" %>
+		<img src="/images/druid.png" alt="Druid" style="width:50px;height:50px;float:right;">
+    <% when "Fighter" %>
+		<img src="/images/fighter.png" alt="Fighter" style="width:50px;height:50px;float:right;">
+    <% when "Monk" %>
+		<img src="/images/monk.png" alt="Monk" style="width:50px;height:50px;float:right;">
+    <% when "Paladin" %>
+		<img src="/images/paladin.png" alt="Palading" style="width:50px;height:50px;float:right;">
+    <% when "Cleric" %>
+		<img src="/images/cleric.png" alt="D20" style="width:50px;height:50px;float:right;">
+    <% when "Rogue" %>
+		<img src="/images/rogue.png" alt="D20" style="width:50px;height:50px;float:right;">
+    <% when "Sorcerer" %>
+		<img src="/images/sorcerer.png" alt="D20" style="width:50px;height:50px;float:right;">
+    <% when "Warlock" %>
+		<img src="/images/warlock.png" alt="D20" style="width:50px;height:50px;float:right;">
+    <% when "Wizard" %>
+		<img src="/images/wizard.png" alt="D20" style="width:50px;height:50px;float:right;">
+		<% end %>
+    
+        <legend><b>Name:</b>  <%=link_to(c.name.capitalize,  "characters/#{c.id}") %><br /></legend>
+        <b>Level:</b> <%= c.level %><br />
+        <b>Race:</b> <%= c.race %><br />
+        <b>Class:</b> <%= c.character_class %><br />
+    </fieldset>
+<% end %>
+</fieldset>

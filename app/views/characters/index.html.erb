@@ -2,15 +2,7 @@
 <hr>
 <%= display_header %>
 <hr>
-<fieldset>
-    <% @characters.character_order_alphabet.each do |c| %>
-    <br>
-    <fieldset>
-        <legend><b>Name:</b>  <%=link_to(c.name.capitalize,  "characters/#{c.id}") %><br /></legend>
-        <b>Level:</b> <%= c.level %><br />
-        <b>Race:</b> <%= c.race %><br />
-        <b>Class:</b> <%= c.character_class %><br />
-    </fieldset>
-<% end %>
-</fieldset>
+<%= render partial: 'index_character', locals: {object: @characters} %>
+
+
 
