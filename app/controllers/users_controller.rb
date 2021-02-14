@@ -61,8 +61,6 @@ class UsersController < ApplicationController
           :age,
           :phone_number,
           :game_master
-          #:uid,
-          #:provider,
         )
     end
 end

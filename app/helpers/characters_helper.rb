@@ -127,7 +127,7 @@ module CharactersHelper
                 image_tag "/images/cleric.png", style: 'width:100px;height:100px;float:right;'
             when "Rogue"
                 image_tag "/images/rouge.png", style: 'width:100px;height:100px;float:right;'
-            when ",cerer"
+            when "Sorcerer"
                 image_tag "/images/,cerer.png", style: 'width:100px;height:100px;float:right;'
             when "Warlock"
                 image_tag "/images/warlock.png", style: 'width:100px;height:100px;float:right;'

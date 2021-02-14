@@ -40,7 +40,7 @@ class CharactersController < ApplicationController
 
     def update
         @character = Character.find_by(id: params[:id])
-        if logged_in? && current_user.id == character.user_id
+        if logged_in? && current_user.id == @character.user_id
             @character.update(character_params)
             redirect_to character_path(@character)
         else
