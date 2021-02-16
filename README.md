@@ -14,30 +14,10 @@ Project is created with:
 * Rails 6.1.1
 	
 ## Setup
-To run this project, install it locally using npm:
-
+To run this project, clone the repo 
 ```
-$ cd ../lorem
-$ npm install
-$ npm start
+$ bundle install
+$ rake db:migrate
+$ rails s 
 ```
 
-## Technologies
-
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* run bundle install to run the gemfile and once migrations are run use rails s to start the program 
-
-* ...
-# gm_campaign_app
