@@ -4,4 +4,5 @@ class Character < ApplicationRecord
     
     validates :user_id, :campaign_id, presence: true
     scope :character_order_level, -> { order(level: :asc)}
+
 end
