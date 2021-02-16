@@ -1,4 +1,17 @@
 <%= render @character %>
+
+
+    <% if @character.user == nil  %>
+    <fieldset>
+    <fieldset>
+    <legend><b>ASSOCIATE A PLAYER TO CHARACTER/ OR DELETE UNUSED CHARACTER:<b></legend>
+        <button><%= link_to "Edit Character", edit_character_path(@character.id) %></button>
+        <%= button_to "DELETE", character_path(@character), method: :delete %>
+    </fieldset>
+    </fieldset>
+    <hr>
+    <% end %>
+
 <fieldset>
     <% if logged_in? && current_user.id == @character.user_id  %>
         <button><%= link_to "Edit Character", edit_character_path(@character.id) %></button>

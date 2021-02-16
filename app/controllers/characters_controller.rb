@@ -43,6 +43,9 @@ class CharactersController < ApplicationController
         if logged_in? && current_user.id == @character.user_id
             @character.update(character_params)
             redirect_to character_path(@character)
+        elsif @character.user == nil
+            @character.update(character_params)
+            redirect_to character_path(@character)
         else
             render partial: 'layouts/errors_player'
         end
@@ -51,6 +54,9 @@ class CharactersController < ApplicationController
     def destroy
         character = Character.find_by(id: params[:id])
         if logged_in? && current_user.id == character.user_id
+            character.destroy
+            redirect_to characters_path
+        elsif character.user == nil
             character.destroy
             redirect_to characters_path
         else

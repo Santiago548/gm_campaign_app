@@ -1,11 +1,29 @@
-# README
+# Campaign APP - For players and Game Masters 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Setup](#setup)
 
-Things you may want to cover:
+## General info
+This project is a simple Campaign managament app for Dungeons and Dragons for Game-Masters and Players.
+	
+## Technologies
+Project is created with:
+* Ruby 2.6.1
+* Rails 6.1.1
+	
+## Setup
+To run this project, install it locally using npm:
 
-* Ruby version
+```
+$ cd ../lorem
+$ npm install
+$ npm start
+```
+
+## Technologies
+
 
 * System dependencies
 
@@ -19,7 +37,7 @@ Things you may want to cover:
 
 * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+* run bundle install to run the gemfile and once migrations are run use rails s to start the program 
 
 * ...
 # gm_campaign_app
