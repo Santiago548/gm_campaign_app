@@ -13,7 +13,11 @@ class CampaignsController < ApplicationController
     end 
     
     def index
-        @campaigns = Campaign.all 
+        if params[:search]
+            @campaigns = Campaign.where("name like ?", "%#{params[:search]}%")     
+        else
+            @campaigns = Campaign.all 
+        end
     end 
 
     def create
@@ -53,7 +57,8 @@ class CampaignsController < ApplicationController
             :end_date,
             :next_session,
             :session_active,
-            :quest_log
+            :quest_log,
+            :search
         )
     end 
 end

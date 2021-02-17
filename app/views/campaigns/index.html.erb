@@ -1,6 +1,10 @@
 <hr>
 <fieldset>
 <h2>CAMPAIGNS:</h2>
+<%= form_tag(campaigns_path, method: :get) do%>
+    <%= text_field_tag(:search, params[:search])%>
+    <%= submit_tag("Search") %>
+<% end %>
 </fieldset>
 <hr>
 <fieldset>
@@ -11,7 +15,10 @@
     <b>Campaign Name:</b> <%=link_to(c.name,  "campaigns/#{c.id}") %><br>
     </legend>
     <b>GM Name:</b> <%= c.gm_name.capitalize %><br>
-    <b>Next Session:</b> <%= c.next_session.strftime( "%a, %B, %e") %><br>
+    <b>Next Session:</b> <%if c.next_session %>
+    <%= c.next_session.strftime( "%a, %B, %e") %><br>
+    <% end %>
+     
     <b>Session Active:</b> 
     <% if c.session_active == true%>
     <%= "the group is out questing" %>
