@@ -95,3 +95,14 @@ footer.branding {
   margin-top: 10px;
   padding-top: 10px;
 }
+
+label {
+  float: left;
+  text-align: left;
+  margin-right: 10px;
+  width: 120px;
+}
+
+textarea:focus, input:focus {
+  border: 2px solid rgb(0, 0, 0);
+}
